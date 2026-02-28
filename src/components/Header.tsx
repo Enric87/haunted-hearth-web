@@ -18,7 +18,7 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
         <Link to="/" className="z-50">
-          <img src="/images/logo.png" alt="Halloween Vilamalla" className="h-10 md:h-12 w-auto" />
+          <img src="/images/logo.png" alt="Halloween Vilamalla" className="h-14 md:h-16 w-auto" />
         </Link>
         <button
           onClick={() => setOpen(!open)}
