@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+import { Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import Countdown from "@/components/Countdown";
 import AuthorCard from "@/components/AuthorCard";
-import BookAnimation from "@/components/BookAnimation";
 import SectionSeparator from "@/components/SectionSeparator";
 
 const authors = [
@@ -55,7 +55,16 @@ export default function Index() {
 
       {/* Video Hero */}
       <section className="w-full py-8">
-        <BookAnimation />
+        <div className="relative aspect-video bg-card overflow-hidden flex items-center justify-center">
+          {/* Placeholder until video is ready */}
+          <div className="absolute inset-0 bg-background/60" />
+          <button
+            className="relative z-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary flex items-center justify-center glow-blood animate-pulse-glow transition-transform hover:scale-110"
+            aria-label="Reproducir vídeo"
+          >
+            <Play className="w-7 h-7 md:w-9 md:h-9 text-primary-foreground ml-1" />
+          </button>
+        </div>
         <div className="text-center mt-8">
           <Link
             to="/el-ritual"
