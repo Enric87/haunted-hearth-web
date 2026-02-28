@@ -31,7 +31,7 @@ export default function Index() {
         <img
           src="/images/logo.png"
           alt="Halloween Vilamalla"
-          className="w-96 md:w-[34rem] lg:w-[38rem] mb-8"
+          className="w-[28rem] md:w-[40rem] lg:w-[46rem] mb-8"
         />
         <p className="font-cinzel text-lg md:text-xl tracking-[0.15em] text-gold mb-2">
           31 de octubre de 2026
