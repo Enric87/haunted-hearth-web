@@ -17,9 +17,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
-        <Link to="/" className="z-50">
-          <img src="/images/logo.png" alt="Halloween Vilamalla" className="h-14 md:h-16 w-auto" />
-        </Link>
+        <div className="z-50" />
         <button
           onClick={() => setOpen(!open)}
           className="z-50 p-2 text-foreground hover:text-primary transition-colors"

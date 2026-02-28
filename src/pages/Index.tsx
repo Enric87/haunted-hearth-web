@@ -54,8 +54,8 @@ export default function Index() {
       <SectionSeparator />
 
       {/* Video Hero */}
-      <section className="px-6 max-w-4xl mx-auto py-8">
-        <div className="relative aspect-video bg-card rounded-sm overflow-hidden border border-border flex items-center justify-center">
+      <section className="w-full py-8">
+        <div className="relative aspect-video bg-card overflow-hidden flex items-center justify-center">
           {/* Placeholder until video is ready */}
           <div className="absolute inset-0 bg-background/60" />
           <button
