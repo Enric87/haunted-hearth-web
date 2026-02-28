@@ -82,8 +82,8 @@
 /* Background with vignette */
 .bg-ritual {
   background-image:
-    radial-gradient(ellipse at center, transparent 40%, hsl(220 30% 6% / 0.95) 100%),
-    linear-gradient(to bottom, hsl(220 30% 6% / 0.85), hsl(220 30% 6% / 0.9)),
+    radial-gradient(ellipse at center, transparent 40%, hsl(220 30% 6% / 0.85) 100%),
+    linear-gradient(to bottom, hsl(220 30% 6% / 0.65), hsl(220 30% 6% / 0.75)),
     url('/images/bg-base.png');
   background-size: cover;
   background-position: center;
