@@ -1,22 +1,23 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import AuthorCard from "@/components/AuthorCard";
 import SectionSeparator from "@/components/SectionSeparator";
 
 const members = [
   {
-    name: "Enric",
-    role: "Diseño, IA y mirada gráfica",
-    quote: "El símbolo antes que la explicación.",
+    name: "ENRIC",
+    image: "/images/enric.png",
+    description: "Diseñador gráfico & web. La estética infernal. Símbolos. Texturas. Caos. Hace que Halloween Vilamalla respire.",
   },
   {
-    name: "Emili",
-    role: "Decoración y atmósfera",
-    quote: "Si lo tocas… te responde.",
+    name: "EMILI",
+    image: "/images/emili.png",
+    description: "Decorador & escenografía. El arquitecto del miedo tangible. Descerebra cada rincón y decora el ritual de la locura.",
   },
   {
-    name: "Bruno",
-    role: "Cámara, montaje y escritura",
-    quote: "El miedo también se redacta.",
+    name: "BRUNO",
+    image: "/images/bruno.png",
+    description: "Editor de vídeos. Graba el pulso de la locura. Ensambla las visiones de la casa. Pánico en cada toma…",
   },
 ];
 
@@ -35,16 +36,10 @@ export default function LaFamilia() {
 
       <SectionSeparator />
 
-      <section className="px-6 max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <section className="px-6 py-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {members.map((m) => (
-            <div key={m.name} className="text-center">
-              {/* Placeholder photo */}
-              <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-secondary border border-border" />
-              <h2 className="font-cinzel text-xl text-gold tracking-wider mb-1">{m.name}</h2>
-              <p className="text-sm text-primary font-medium mb-2">{m.role}</p>
-              <p className="text-sm text-muted-foreground italic">"{m.quote}"</p>
-            </div>
+            <AuthorCard key={m.name} {...m} />
           ))}
         </div>
       </section>
