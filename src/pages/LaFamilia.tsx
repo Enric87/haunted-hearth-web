@@ -17,7 +17,7 @@ const members = [
   {
     name: "BRUNO",
     image: "/images/bruno.png",
-    description: "Edición de vídeo y VFX. Graba el pulso de la locura. Ensambla las visiones de la casa. Terror frame a frame.",
+    description: "Graba el pulso de la locura.\nEnsambla las visiones de la casa.\nTerror frame a frame.\nPánico en cada toma...",
   },
 ];
 
