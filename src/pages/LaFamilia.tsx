@@ -7,7 +7,7 @@ const members = [
   {
     name: "ENRIC",
     image: "/images/enric.png",
-    description: "Diseñador gráfico & web. La estética infernal. Símbolos. Texturas. Caos. Hace que Halloween Vilamalla respire.",
+    description: "Creador digital de la casa.\nArquitecto invisible de la web.\nTeje sombras, código y símbolos.\nTerror en cada píxel..",
   },
   {
     name: "EMILI",
