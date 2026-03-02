@@ -3,11 +3,11 @@ import Layout from "@/components/Layout";
 import SectionSeparator from "@/components/SectionSeparator";
 
 const tips = [
-  "Ven con tiempo. La entrada es por turnos.",
-  "Parking: zona por definir.",
-  "Ropa cómoda. El ritual no espera.",
-  "Si vienes con menores, decide antes de cruzar el umbral.",
-];
+"Ven con tiempo. La entrada es por turnos.",
+"Parking: zona por definir.",
+"Ropa cómoda. El ritual no espera.",
+"Si vienes con menores, decide antes de cruzar el umbral."];
+
 
 export default function ElAcceso() {
   return (
@@ -24,7 +24,7 @@ export default function ElAcceso() {
           <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
           <div>
             <p className="text-foreground font-medium">Vilamalla, Girona</p>
-            <p className="text-sm text-muted-foreground">Dirección exacta pendiente de confirmar</p>
+            <p className="text-sm text-muted-foreground">C/ Alberes, 4</p>
           </div>
         </div>
 
@@ -51,12 +51,12 @@ export default function ElAcceso() {
           Recomendaciones
         </h2>
         <ul className="space-y-3">
-          {tips.map((t, i) => (
-            <li key={i} className="flex items-start gap-3 text-muted-foreground">
+          {tips.map((t, i) =>
+          <li key={i} className="flex items-start gap-3 text-muted-foreground">
               <span className="text-primary mt-0.5">—</span>
               <span>{t}</span>
             </li>
-          ))}
+          )}
         </ul>
       </section>
 
@@ -68,8 +68,8 @@ export default function ElAcceso() {
           href="https://maps.google.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
-        >
+          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
+          
           <ExternalLink className="w-4 h-4" />
           ABRIR EN GOOGLE MAPS
         </a>
@@ -77,12 +77,12 @@ export default function ElAcceso() {
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
-        >
+          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors">
+          
           <MessageCircle className="w-4 h-4" />
           ESCRÍBENOS
         </a>
       </section>
-    </Layout>
-  );
+    </Layout>);
+
 }
