@@ -29,7 +29,11 @@ export const galeriaData: YearData[] = [
   },
   {
     year: "2025",
-    people: [],
+    people: [
+      { id: "kike", name: "Kike", posterUrl: "/images/posters/kike.png", photos: [], videos: [] },
+      { id: "emili", name: "Emili", posterUrl: "/images/posters/emili.jpeg", photos: [], videos: [] },
+      { id: "bruno", name: "Bruno", posterUrl: "/images/posters/bruno.jpg", photos: [], videos: [] },
+    ],
     photos: [],
     videos: [],
   },

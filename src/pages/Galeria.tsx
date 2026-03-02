@@ -7,11 +7,11 @@ import PosterCard from "@/components/PosterCard";
 import PosterModal from "@/components/PosterModal";
 import { galeriaData, type Person, type MediaItem } from "@/data/galeria";
 
-type FilterType = "Todo" | "Posters" | "Fotos" | "Vídeos";
+type FilterType = "Rostros" | "Fotos" | "Vídeos";
 
 export default function Galeria() {
   const [selectedYear, setSelectedYear] = useState("2024");
-  const [selectedFilter, setSelectedFilter] = useState<FilterType>("Todo");
+  const [selectedFilter, setSelectedFilter] = useState<FilterType>("Fotos");
   const [lightbox, setLightbox] = useState<MediaItem | null>(null);
   const [modalPerson, setModalPerson] = useState<Person | null>(null);
 
@@ -20,24 +20,24 @@ export default function Galeria() {
 
   const filters: FilterType[] =
     selectedYear === "2025" && hasPosters
-      ? ["Todo", "Posters", "Fotos", "Vídeos"]
-      : ["Todo", "Fotos", "Vídeos"];
+      ? ["Rostros", "Fotos", "Vídeos"]
+      : ["Fotos", "Vídeos"];
 
   const handleYearChange = (year: string) => {
     setSelectedYear(year);
-    setSelectedFilter("Todo");
+    setSelectedFilter(year === "2025" ? "Rostros" : "Fotos");
   };
 
-  const showPosters = hasPosters && (selectedFilter === "Todo" || selectedFilter === "Posters");
-  const showPhotos = selectedFilter === "Todo" || selectedFilter === "Fotos";
-  const showVideos = selectedFilter === "Todo" || selectedFilter === "Vídeos";
+  const showPosters = hasPosters && selectedFilter === "Rostros";
+  const showPhotos = selectedFilter === "Fotos";
+  const showVideos = selectedFilter === "Vídeos";
 
   const hasContent =
     (showPosters && yearData.people.length > 0) ||
     (showPhotos && yearData.photos.length > 0) ||
     (showVideos && yearData.videos.length > 0);
 
-  const showIntro = selectedYear === "2024" && selectedFilter === "Todo" && yearData.introText;
+  const showIntro = selectedYear === "2024" && yearData.introText;
 
   return (
     <Layout>
@@ -116,9 +116,12 @@ export default function Galeria() {
           </p>
         )}
 
-        {/* Posters grid */}
+        {/* Rostros grid */}
         {showPosters && yearData.people.length > 0 && (
           <div className="mb-10">
+            <h2 className="font-cinzel text-sm tracking-[0.2em] text-muted-foreground mb-4">
+              ROSTROS 2025
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {yearData.people.map((person) => (
                 <PosterCard
@@ -134,11 +137,6 @@ export default function Galeria() {
         {/* Photos grid */}
         {showPhotos && yearData.photos.length > 0 && (
           <div className="mb-10">
-            {selectedFilter === "Todo" && (
-              <h2 className="font-cinzel text-sm tracking-[0.2em] text-muted-foreground mb-4">
-                FOTOS
-              </h2>
-            )}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {yearData.photos.map((photo, i) => (
                 <button
@@ -161,11 +159,6 @@ export default function Galeria() {
         {/* Videos grid */}
         {showVideos && yearData.videos.length > 0 && (
           <div className="mb-10">
-            {selectedFilter === "Todo" && (
-              <h2 className="font-cinzel text-sm tracking-[0.2em] text-muted-foreground mb-4">
-                VÍDEOS
-              </h2>
-            )}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {yearData.videos.map((video, i) => (
                 <div
