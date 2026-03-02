@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Play } from "lucide-react";
+
 import Layout from "@/components/Layout";
 import Countdown from "@/components/Countdown";
 import AuthorCard from "@/components/AuthorCard";
@@ -55,15 +55,15 @@ export default function Index() {
 
       {/* Video Hero */}
       <section className="w-full py-8">
-        <div className="relative aspect-video bg-card overflow-hidden flex items-center justify-center">
-          {/* Placeholder until video is ready */}
-          <div className="absolute inset-0 bg-background/60" />
-          <button
-            className="relative z-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary flex items-center justify-center glow-blood animate-pulse-glow transition-transform hover:scale-110"
-            aria-label="Reproducir vídeo"
-          >
-            <Play className="w-7 h-7 md:w-9 md:h-9 text-primary-foreground ml-1" />
-          </button>
+      <div className="relative aspect-video bg-card overflow-hidden">
+          <video
+            className="w-full h-full object-cover"
+            src="/videos/hero.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
         </div>
         <div className="text-center mt-8">
           <Link
