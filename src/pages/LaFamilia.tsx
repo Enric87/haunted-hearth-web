@@ -7,7 +7,7 @@ const members = [
   {
     name: "ENRIC",
     image: "/images/enric.png",
-    description: "Creador digital de la casa. Arquitecto invisible de la web. Teje sombras, códigos y símbolos. Terror en cada píxel..",
+    description: "Diseñador gráfico & web.\nCreador digital de la casa.\nExperto en IA creativa.\nTeje sombras, códigos y símbolos.\nTerror en cada píxel.",
   },
   {
     name: "EMILI",
@@ -17,7 +17,7 @@ const members = [
   {
     name: "BRUNO",
     image: "/images/bruno.png",
-    description: "Graba el pulso de la locura.\nEnsambla las visiones de la casa.\nTerror frame a frame.\nPánico en cada toma...",
+    description: "Edición de video  y VFX. Graba el pulso de la locura. Ensambla las visiones de la casa. Terror frame a frame. Pánico en cada toma...",
   },
 ];
 
