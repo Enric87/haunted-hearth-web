@@ -7,7 +7,7 @@ const members = [
   {
     name: "ENRIC",
     image: "/images/enric.png",
-    description: "Creador digital de la casa.\nArquitecto invisible de la web.\nTeje sombras, código y símbolos.\nTerror en cada píxel..",
+    description: "Creador digital de la casa. Arquitecto invisible de la web. Teje sombras, códigos y símbolos. Terror en cada píxel..",
   },
   {
     name: "EMILI",
