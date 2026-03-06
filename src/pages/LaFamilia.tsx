@@ -12,7 +12,7 @@ const members = [
 {
   name: "EMILI",
   image: "/images/emili.png",
-  description: "Decorador & escenografía. El arquitecto del miedo tangible. Descerebra cada rincón y decora el ritual de la locura."
+  description: "Decorador & escenografía. El arquitecto del miedo tangible. Descerebra cada rincón y decora el devenir de la locura."
 },
 {
   name: "BRUNO",
