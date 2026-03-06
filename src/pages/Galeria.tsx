@@ -50,7 +50,7 @@ export default function Galeria() {
 
 
         </p>
-        <p className="text-muted-foreground">Cada año, algo queda grabado.</p>
+        <p className="text-muted-foreground">Cada año, algo se revuelve en las sombras.</p>
       </section>
 
       {/* Year selector */}
