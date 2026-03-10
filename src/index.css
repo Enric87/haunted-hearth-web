@@ -111,3 +111,13 @@
     box-shadow: 0 8px 30px hsl(var(--blood) / 0.15);
   }
 }
+
+/* Drop cap for ritual narrative */
+.drop-cap::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  float: left;
+  margin-right: 8px;
+  line-height: 1;
+  color: hsl(var(--gold));
+}
