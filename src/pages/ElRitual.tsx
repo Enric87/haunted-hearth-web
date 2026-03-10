@@ -58,7 +58,7 @@ export default function ElRitual() {
 
       <section className="px-6 max-w-3xl mx-auto space-y-12">
         {zones.map((zone, i) => <div key={i}>
-            <h2 className="font-cinzel text-xl md:text-2xl text-gold tracking-wider mb-3">
+            <h2 className="font-cormorant text-xl md:text-2xl text-gold tracking-[0.03em] font-medium mb-3 uppercase">
               {zone.title}
             </h2>
             <p className="font-cormorant text-lg text-muted-foreground leading-[1.7]">{zone.text}</p>
