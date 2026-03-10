@@ -50,11 +50,8 @@ export default function ElRitual() {
         <h1 className="font-cinzel text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-wider">
           El Ritual
         </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed">Sean ustedes bienvenidos a la multiversalidad. Les invitamos a descender con nosotros al profundo abismo de las mentes más perversas de la literatura tétrica y fantástica. En este lugar el aire cambia de textura poro a poro, introduciéndoles en un paraje desolador y bañado en zozobra. 
-
-
-
-
+        <p className="font-cormorant text-lg md:text-xl text-muted-foreground leading-[1.7] drop-cap">Sean ustedes bienvenidos a la multiversalidad. Les invitamos a descender con nosotros al profundo abismo de las mentes más perversas de la literatura tétrica y fantástica. En este lugar el aire cambia de textura poro a poro, introduciéndoles en un paraje desolador y bañado en zozobra.
+        </p>
 
 
 
