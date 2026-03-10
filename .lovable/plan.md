@@ -1,94 +1,49 @@
 
 
-## Plan: Galería "Lo que ya despertamos" — Archivo por año
+## Plan: Sistema tipográfico con Cormorant Garamond
 
-### Data Structure
+### Summary
+Add **Cormorant Garamond** as the narrative/body font. Cinzel (titles) and Inter (UI) are already in place. The main change is introducing the middle tier: literary body text.
 
-Create a new data file `src/data/galeria.ts` with typed interfaces and content:
+### Changes
 
-```typescript
-interface Person {
-  id: string;
-  name: string;
-  posterUrl: string;
-  photos: { src: string; alt: string }[];
-  videos: { src: string; alt: string }[];
-}
-
-interface YearData {
-  year: string;
-  introText?: string;
-  people: Person[];
-  photos: { src: string; alt: string }[];
-  videos: { src: string; alt: string }[];
+**1. `src/index.css`** — Font import & base styles
+- Update Google Fonts import to include `Cormorant+Garamond:wght@400;500;600`
+- Change `body` default font to remain Inter (UI default)
+- Add a new utility class `.font-narrative` or use Tailwind's `font-cormorant` for narrative text
+- Add drop cap style for ritual page first paragraphs:
+```css
+.drop-cap::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  float: left;
+  margin-right: 8px;
+  line-height: 1;
+  color: hsl(var(--gold));
 }
 ```
 
-- **2024**: `people: []`, empty photos/videos arrays, introText: "En 2024 no hubo rostros.\nSolo pruebas… y testigos."
-- **2025**: `people: []` (ready for future posters), empty photos/videos arrays
+**2. `tailwind.config.ts`** — Add font family
+- Add `cormorant: ["Cormorant Garamond", "serif"]` to `fontFamily`
 
-### Component: PosterCard
+**3. Page files** — Apply `font-cormorant` to narrative text
+- **`src/pages/Index.tsx`**: No major narrative text (hero is titles + UI)
+- **`src/pages/ElRitual.tsx`**: Apply `font-cormorant text-lg leading-[1.7]` to intro paragraph and zone descriptions. Add `drop-cap` class to intro paragraph.
+- **`src/pages/LaFamilia.tsx`**: Apply `font-cormorant` to descriptive paragraphs
+- **`src/pages/Galeria.tsx`**: Apply `font-cormorant` to intro/descriptive text
+- **`src/pages/ElAcceso.tsx`**: Apply `font-cormorant` to narrative paragraphs (need to check content)
 
-New component `src/components/PosterCard.tsx`:
-- Vertical card with `aspect-[3/4]`, border, background matching site style
-- Hover: subtle zoom + glow (`card-hover` class + custom glow)
-- On click: opens a Dialog modal
+**4. `src/components/AuthorModal.tsx`** — Apply `font-cormorant` to bio text
 
-### Component: PosterModal
+**5. `src/components/AuthorCard.tsx`** — Apply `font-cormorant` to description text
 
-New component `src/components/PosterModal.tsx` (uses existing Dialog UI):
-- Large poster image
-- Title: person name, subtitle: "Halloween {year}"
-- "Su rastro" section: photo grid
-- "Ecos" section: video grid
-- Close via ESC or X button
-- Fade + scale animation (already supported by Dialog)
+**6. `src/components/Footer.tsx`** — Keep Inter (UI element)
 
-### Page Rewrite: `src/pages/Galeria.tsx`
+### Text color
+Update foreground color from current `40 20% 90%` (~ivory) — the current value is already warm ivory, so no change needed. The PRD suggests `#e7dcc6` which maps to approximately `40 30% 84%` — a slightly warmer/darker tone. Will update `--foreground` to this value for a more parchment-like feel.
 
-**State:**
-- `selectedYear` (default `"2024"`)
-- `selectedFilter` (default `"Todo"`)
-
-**Year selector** — rendered below subtitle, same button style as filters, active = `border-primary text-primary`.
-
-**Dynamic filters:**
-- 2024: `Todo | Fotos | Vídeos`
-- 2025: `Todo | Posters | Fotos | Vídeos` (Posters only if `people.length > 0`)
-- Reset filter to "Todo" on year change
-
-**Content rendering by filter:**
-- **Todo (2024):** Intro text block → Photos grid → Videos grid. No posters block.
-- **Todo (2025):** Posters grid (if any) → Photos grid → Videos grid.
-- **Posters:** Only poster cards grid.
-- **Fotos:** Only photos grid.
-- **Vídeos:** Only videos grid.
-
-**Empty state:** If no content for current filter, show centered message: *"Aún no hay pruebas registradas aquí."* — styled with `text-muted-foreground font-cinzel`.
-
-**Grid:** `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` for photos/videos. Posters use same grid but cards maintain `aspect-[3/4]`.
-
-**Lightbox:** Keep existing lightbox for photos/videos. Posters use Dialog modal instead.
-
-### Animations
-
-- Year/filter change: wrap content in a div with CSS `transition-opacity duration-250` using a key-based remount (`key={selectedYear + selectedFilter}`) with `animate-fade-in` class.
-- Card hover: existing `card-hover` class.
-- Modal: Dialog already has fade+scale animations.
-
-### Responsive
-
-- Desktop: 3 columns
-- Tablet: 2 columns  
-- Mobile: 1 column
-- Poster cards maintain 3:4 ratio at all breakpoints
-
-### Files to create/modify
-
-| Action | File |
-|--------|------|
-| Create | `src/data/galeria.ts` |
-| Create | `src/components/PosterCard.tsx` |
-| Create | `src/components/PosterModal.tsx` |
-| Rewrite | `src/pages/Galeria.tsx` |
+### What stays the same
+- Cinzel on all headings (already configured)
+- Inter on UI elements, countdown, buttons, nav, footer
+- Logo, icons, symbols untouched
 
