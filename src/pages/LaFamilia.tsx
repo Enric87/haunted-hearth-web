@@ -28,10 +28,9 @@ export default function LaFamilia() {
         <h1 className="font-cinzel text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-wider">
           La Familia
         </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed mb-4">No creamos historias. Abrimos un pasaje a lo desconocido.
-
+        <p className="font-cormorant text-lg md:text-xl text-muted-foreground leading-[1.7] mb-4">No creamos historias. Abrimos un pasaje a lo desconocido.
         </p>
-        <p className="text-muted-foreground">Tres cerebros. Una misma locura.</p>
+        <p className="font-cormorant text-lg text-muted-foreground leading-[1.7]">Tres cerebros. Una misma locura.</p>
       </section>
 
       <SectionSeparator />
