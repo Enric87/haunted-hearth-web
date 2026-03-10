@@ -46,11 +46,9 @@ export default function Galeria() {
         <h1 className="font-cinzel text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-wider">
           Lo que ya despertamos
         </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed mb-2">No son reminiscencias. Son evidencias.
-
-
+        <p className="font-cormorant text-lg md:text-xl text-muted-foreground leading-[1.7] mb-2">No son reminiscencias. Son evidencias.
         </p>
-        <p className="text-muted-foreground">Cada año, algo se revuelve en las sombras.</p>
+        <p className="font-cormorant text-lg text-muted-foreground leading-[1.7]">Cada año, algo se revuelve en las sombras.</p>
       </section>
 
       {/* Year selector */}

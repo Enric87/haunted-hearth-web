@@ -66,7 +66,7 @@ export default function ElRitual() {
             <h2 className="font-cinzel text-xl md:text-2xl text-gold tracking-wider mb-3">
               {zone.title}
             </h2>
-            <p className="text-muted-foreground leading-relaxed">{zone.text}</p>
+            <p className="font-cormorant text-lg text-muted-foreground leading-[1.7]">{zone.text}</p>
             {i < zones.length - 1 && <div className="separator-blood mt-10 max-w-[120px]" />}
           </div>)}
       </section>

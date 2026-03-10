@@ -46,8 +46,7 @@ export default function LaFamilia() {
       <SectionSeparator />
 
       <section className="px-6 py-8 text-center max-w-2xl mx-auto">
-        <p className="text-muted-foreground mb-8">Año tras año incrementamos la angustia, porque la imaginación y la creatividad no tienen límites.
-
+        <p className="font-cormorant text-lg text-muted-foreground leading-[1.7] mb-8">Año tras año incrementamos la angustia, porque la imaginación y la creatividad no tienen límites.
         </p>
         <Link
           to="/el-ritual"

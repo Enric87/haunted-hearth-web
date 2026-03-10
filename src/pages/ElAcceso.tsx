@@ -52,7 +52,7 @@ export default function ElAcceso() {
         </h2>
         <ul className="space-y-3">
           {tips.map((t, i) =>
-          <li key={i} className="flex items-start gap-3 text-muted-foreground">
+          <li key={i} className="flex items-start gap-3 font-cormorant text-lg text-muted-foreground leading-[1.7]">
               <span className="text-primary mt-0.5">—</span>
               <span>{t}</span>
             </li>
