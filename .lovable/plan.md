@@ -1,31 +1,94 @@
 
 
-## Plan: Modal biográfico interactivo para los autores
+## Plan: Galería "Lo que ya despertamos" — Archivo por año
 
-### Changes
+### Data Structure
 
-**1. Update `src/pages/Index.tsx`**
-- Add `bio` field to each author in the `authors` array with the provided biographical texts
-- Add `useState` for `selectedAuthor`
-- Make each `AuthorCard` clickable via `onClick` prop
-- Render `AuthorModal` component at the bottom, passing `selectedAuthor` and `onClose`
+Create a new data file `src/data/galeria.ts` with typed interfaces and content:
 
-**2. Update `src/components/AuthorCard.tsx`**
-- Accept optional `onClick` prop
-- Add `cursor-pointer` and `role="button"` / `tabIndex={0}` for accessibility
-- The existing `card-hover` class already handles hover elevation; the `group-hover:scale-105` on the image is already present
+```typescript
+interface Person {
+  id: string;
+  name: string;
+  posterUrl: string;
+  photos: { src: string; alt: string }[];
+  videos: { src: string; alt: string }[];
+}
 
-**3. Create `src/components/AuthorModal.tsx`**
-- Use the existing `Dialog` component (Radix-based, already handles ESC, click-outside, focus trap, scroll lock)
-- Custom styling on `DialogContent` to match the dark cinematic aesthetic:
-  - `bg-black/95 border border-gold/20 rounded-xl shadow-2xl max-w-3xl`
-- Layout: "ARCHIVO INVOCADO" label, author name as title, bio text in ivory/warm gray
-- Close button styled with the X icon
+interface YearData {
+  year: string;
+  introText?: string;
+  people: Person[];
+  photos: { src: string; alt: string }[];
+  videos: { src: string; alt: string }[];
+}
+```
 
-### Data
+- **2024**: `people: []`, empty photos/videos arrays, introText: "En 2024 no hubo rostros.\nSolo pruebas… y testigos."
+- **2025**: `people: []` (ready for future posters), empty photos/videos arrays
 
-All three bios will be stored inline in the `authors` array in `Index.tsx` — no separate data file needed since it's only 3 items.
+### Component: PosterCard
 
-### Accessibility
-Handled by Radix Dialog: focus trap, ESC close, click-outside close, aria attributes.
+New component `src/components/PosterCard.tsx`:
+- Vertical card with `aspect-[3/4]`, border, background matching site style
+- Hover: subtle zoom + glow (`card-hover` class + custom glow)
+- On click: opens a Dialog modal
+
+### Component: PosterModal
+
+New component `src/components/PosterModal.tsx` (uses existing Dialog UI):
+- Large poster image
+- Title: person name, subtitle: "Halloween {year}"
+- "Su rastro" section: photo grid
+- "Ecos" section: video grid
+- Close via ESC or X button
+- Fade + scale animation (already supported by Dialog)
+
+### Page Rewrite: `src/pages/Galeria.tsx`
+
+**State:**
+- `selectedYear` (default `"2024"`)
+- `selectedFilter` (default `"Todo"`)
+
+**Year selector** — rendered below subtitle, same button style as filters, active = `border-primary text-primary`.
+
+**Dynamic filters:**
+- 2024: `Todo | Fotos | Vídeos`
+- 2025: `Todo | Posters | Fotos | Vídeos` (Posters only if `people.length > 0`)
+- Reset filter to "Todo" on year change
+
+**Content rendering by filter:**
+- **Todo (2024):** Intro text block → Photos grid → Videos grid. No posters block.
+- **Todo (2025):** Posters grid (if any) → Photos grid → Videos grid.
+- **Posters:** Only poster cards grid.
+- **Fotos:** Only photos grid.
+- **Vídeos:** Only videos grid.
+
+**Empty state:** If no content for current filter, show centered message: *"Aún no hay pruebas registradas aquí."* — styled with `text-muted-foreground font-cinzel`.
+
+**Grid:** `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` for photos/videos. Posters use same grid but cards maintain `aspect-[3/4]`.
+
+**Lightbox:** Keep existing lightbox for photos/videos. Posters use Dialog modal instead.
+
+### Animations
+
+- Year/filter change: wrap content in a div with CSS `transition-opacity duration-250` using a key-based remount (`key={selectedYear + selectedFilter}`) with `animate-fade-in` class.
+- Card hover: existing `card-hover` class.
+- Modal: Dialog already has fade+scale animations.
+
+### Responsive
+
+- Desktop: 3 columns
+- Tablet: 2 columns  
+- Mobile: 1 column
+- Poster cards maintain 3:4 ratio at all breakpoints
+
+### Files to create/modify
+
+| Action | File |
+|--------|------|
+| Create | `src/data/galeria.ts` |
+| Create | `src/components/PosterCard.tsx` |
+| Create | `src/components/PosterModal.tsx` |
+| Rewrite | `src/pages/Galeria.tsx` |
 
