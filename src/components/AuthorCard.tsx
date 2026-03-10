@@ -24,7 +24,7 @@ export default function AuthorCard({ name, image, description, onClick }: Author
       </div>
       <div className="p-5">
         <h3 className="font-cinzel text-xl font-semibold text-gold tracking-wider mb-2">{name}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+        <p className="font-cormorant text-base text-muted-foreground leading-[1.7]">{description}</p>
       </div>
     </div>
   );

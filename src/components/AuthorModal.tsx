@@ -37,7 +37,7 @@ export default function AuthorModal({ author, open, onOpenChange }: AuthorModalP
         <div className="separator-blood my-4" />
 
         <div className="px-2 md:px-6 pb-4">
-          <p className="text-foreground/85 leading-relaxed text-sm md:text-base whitespace-pre-line">
+          <p className="font-cormorant text-foreground/85 leading-[1.7] text-lg md:text-xl whitespace-pre-line">
             {author.bio}
           </p>
         </div>
