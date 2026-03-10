@@ -1,94 +1,35 @@
 
 
-## Plan: Galería "Lo que ya despertamos" — Archivo por año
+## Plan: Switch heading font from Cinzel to Cormorant Garamond
 
-### Data Structure
+### What changes
+Replace `font-cinzel` with `font-cormorant` on all heading elements (H1, H2, H3) and title-like text across the site. Keep `font-cinzel` only on small UI labels, buttons, and navigation links.
 
-Create a new data file `src/data/galeria.ts` with typed interfaces and content:
+### Changes
 
-```typescript
-interface Person {
-  id: string;
-  name: string;
-  posterUrl: string;
-  photos: { src: string; alt: string }[];
-  videos: { src: string; alt: string }[];
-}
+**1. `src/index.css`** — Update base heading rule
+- Change `h1, h2, h3, h4, h5, h6` font-family from `'Cinzel'` to `'Cormorant Garamond'`
 
-interface YearData {
-  year: string;
-  introText?: string;
-  people: Person[];
-  photos: { src: string; alt: string }[];
-  videos: { src: string; alt: string }[];
-}
-```
+**2. Page files** — Replace `font-cinzel` → `font-cormorant` on H1/H2 headings:
+- `src/pages/Index.tsx`: H1 "LITERALMENTE TERRORÍFICO", date line
+- `src/pages/ElRitual.tsx`: H1 "El Ritual", H2 zone titles, H2 "Normas"
+- `src/pages/LaFamilia.tsx`: H1 "La Familia"
+- `src/pages/ElAcceso.tsx`: H1 "El Acceso", H2 "Recomendaciones"
+- `src/pages/Galeria.tsx`: H1 title
 
-- **2024**: `people: []`, empty photos/videos arrays, introText: "En 2024 no hubo rostros.\nSolo pruebas… y testigos."
-- **2025**: `people: []` (ready for future posters), empty photos/videos arrays
+**3. Component files** — Replace on heading text:
+- `src/components/AuthorCard.tsx`: H3 author name
+- `src/components/AuthorModal.tsx`: modal title (keep "Archivo invocado" label as `font-cinzel` since it's a small UI label)
 
-### Component: PosterCard
+**4. Adjust letter-spacing** on H1s to `tracking-[0.04em]` (wider) and ensure `font-semibold` weight for the literary feel.
 
-New component `src/components/PosterCard.tsx`:
-- Vertical card with `aspect-[3/4]`, border, background matching site style
-- Hover: subtle zoom + glow (`card-hover` class + custom glow)
-- On click: opens a Dialog modal
+**5. Split long title** — "LITERALMENTE TERRORÍFICO" → two lines using a `<br />` tag.
 
-### Component: PosterModal
-
-New component `src/components/PosterModal.tsx` (uses existing Dialog UI):
-- Large poster image
-- Title: person name, subtitle: "Halloween {year}"
-- "Su rastro" section: photo grid
-- "Ecos" section: video grid
-- Close via ESC or X button
-- Fade + scale animation (already supported by Dialog)
-
-### Page Rewrite: `src/pages/Galeria.tsx`
-
-**State:**
-- `selectedYear` (default `"2024"`)
-- `selectedFilter` (default `"Todo"`)
-
-**Year selector** — rendered below subtitle, same button style as filters, active = `border-primary text-primary`.
-
-**Dynamic filters:**
-- 2024: `Todo | Fotos | Vídeos`
-- 2025: `Todo | Posters | Fotos | Vídeos` (Posters only if `people.length > 0`)
-- Reset filter to "Todo" on year change
-
-**Content rendering by filter:**
-- **Todo (2024):** Intro text block → Photos grid → Videos grid. No posters block.
-- **Todo (2025):** Posters grid (if any) → Photos grid → Videos grid.
-- **Posters:** Only poster cards grid.
-- **Fotos:** Only photos grid.
-- **Vídeos:** Only videos grid.
-
-**Empty state:** If no content for current filter, show centered message: *"Aún no hay pruebas registradas aquí."* — styled with `text-muted-foreground font-cinzel`.
-
-**Grid:** `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` for photos/videos. Posters use same grid but cards maintain `aspect-[3/4]`.
-
-**Lightbox:** Keep existing lightbox for photos/videos. Posters use Dialog modal instead.
-
-### Animations
-
-- Year/filter change: wrap content in a div with CSS `transition-opacity duration-250` using a key-based remount (`key={selectedYear + selectedFilter}`) with `animate-fade-in` class.
-- Card hover: existing `card-hover` class.
-- Modal: Dialog already has fade+scale animations.
-
-### Responsive
-
-- Desktop: 3 columns
-- Tablet: 2 columns  
-- Mobile: 1 column
-- Poster cards maintain 3:4 ratio at all breakpoints
-
-### Files to create/modify
-
-| Action | File |
-|--------|------|
-| Create | `src/data/galeria.ts` |
-| Create | `src/components/PosterCard.tsx` |
-| Create | `src/components/PosterModal.tsx` |
-| Rewrite | `src/pages/Galeria.tsx` |
+### What stays as `font-cinzel`
+- Navigation links (Header)
+- Buttons / CTAs
+- "Archivo invocado" label
+- Footer text
+- PosterCard overlays
+- Small UI labels
 
