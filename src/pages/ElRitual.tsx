@@ -47,8 +47,8 @@ export default function ElRitual() {
   return (
     <Layout>
       <section className="px-6 py-12 md:py-20 max-w-3xl mx-auto text-center">
-        <h1 className="font-cinzel text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-wider">
-          El Ritual
+        <h1 className="font-cormorant text-3xl md:text-5xl font-semibold text-foreground mb-6 tracking-[0.04em] uppercase">
+          EL RITUAL
         </h1>
         <p className="font-cormorant text-lg md:text-xl text-muted-foreground leading-[1.7] drop-cap">Sean ustedes bienvenidos a la multiversalidad. Les invitamos a descender con nosotros al profundo abismo de las mentes más perversas de la literatura tétrica y fantástica. En este lugar el aire cambia de textura poro a poro, introduciéndoles en un paraje desolador y bañado en zozobra.
         </p>
@@ -58,7 +58,7 @@ export default function ElRitual() {
 
       <section className="px-6 max-w-3xl mx-auto space-y-12">
         {zones.map((zone, i) => <div key={i}>
-            <h2 className="font-cinzel text-xl md:text-2xl text-gold tracking-wider mb-3">
+            <h2 className="font-cormorant text-xl md:text-2xl text-gold tracking-[0.03em] font-medium mb-3 uppercase">
               {zone.title}
             </h2>
             <p className="font-cormorant text-lg text-muted-foreground leading-[1.7]">{zone.text}</p>
@@ -70,8 +70,8 @@ export default function ElRitual() {
 
       {/* Rules */}
       <section className="px-6 py-8 max-w-2xl mx-auto">
-        <h2 className="font-cinzel text-xl text-primary tracking-wider mb-6 text-center">
-          Normas
+        <h2 className="font-cormorant text-xl text-primary tracking-[0.03em] font-medium mb-6 text-center uppercase">
+          NORMAS
         </h2>
         <ul className="space-y-3">
           {rules.map((r, i) => <li key={i} className="flex items-start gap-3 text-muted-foreground">

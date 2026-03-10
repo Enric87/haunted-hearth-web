@@ -13,8 +13,8 @@ export default function ElAcceso() {
   return (
     <Layout>
       <section className="px-6 py-12 md:py-20 max-w-3xl mx-auto text-center">
-        <h1 className="font-cinzel text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-wider">
-          El Acceso
+        <h1 className="font-cormorant text-3xl md:text-5xl font-semibold text-foreground mb-6 tracking-[0.04em] uppercase">
+          EL ACCESO
         </h1>
       </section>
 
@@ -47,8 +47,8 @@ export default function ElAcceso() {
 
       {/* Recommendations */}
       <section className="px-6 max-w-2xl mx-auto">
-        <h2 className="font-cinzel text-xl text-gold tracking-wider mb-6 text-center">
-          Recomendaciones
+        <h2 className="font-cormorant text-xl text-gold tracking-[0.03em] font-medium mb-6 text-center uppercase">
+          RECOMENDACIONES
         </h2>
         <ul className="space-y-3">
           {tips.map((t, i) =>
