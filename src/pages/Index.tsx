@@ -40,7 +40,7 @@ export default function Index() {
           alt="Halloween Vilamalla"
           className="w-[42rem] md:w-[58rem] lg:w-[68rem] mb-8"
         />
-        <p className="font-cinzel text-lg md:text-xl tracking-[0.15em] text-gold mb-2">
+        <p className="font-cormorant text-lg md:text-xl tracking-[0.15em] text-gold mb-2">
           31 de octubre de 2026
         </p>
         <p className="text-sm tracking-[0.2em] text-muted-foreground mb-8">
