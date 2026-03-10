@@ -53,8 +53,8 @@ export default function Index() {
 
       {/* Claim */}
       <section className="text-center px-6 py-8">
-        <h1 className="font-cinzel text-3xl md:text-5xl lg:text-6xl font-bold tracking-[0.08em] text-foreground">
-          LITERALMENTE TERRORÍFICO
+        <h1 className="font-cormorant text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[0.04em] text-foreground uppercase">
+          LITERALMENTE<br />TERRORÍFICO
         </h1>
       </section>
 

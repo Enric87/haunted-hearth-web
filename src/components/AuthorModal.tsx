@@ -29,7 +29,7 @@ export default function AuthorModal({ author, open, onOpenChange }: AuthorModalP
           <DialogDescription className="font-cinzel text-xs tracking-[0.3em] text-gold/60 uppercase">
             Archivo invocado
           </DialogDescription>
-          <DialogTitle className="font-cinzel text-3xl md:text-4xl tracking-wider text-gold">
+          <DialogTitle className="font-cormorant text-3xl md:text-4xl tracking-[0.04em] text-gold font-semibold">
             {author.name}
           </DialogTitle>
         </DialogHeader>

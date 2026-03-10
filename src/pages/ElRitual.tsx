@@ -70,8 +70,8 @@ export default function ElRitual() {
 
       {/* Rules */}
       <section className="px-6 py-8 max-w-2xl mx-auto">
-        <h2 className="font-cinzel text-xl text-primary tracking-wider mb-6 text-center">
-          Normas
+        <h2 className="font-cormorant text-xl text-primary tracking-[0.03em] font-medium mb-6 text-center uppercase">
+          NORMAS
         </h2>
         <ul className="space-y-3">
           {rules.map((r, i) => <li key={i} className="flex items-start gap-3 text-muted-foreground">
