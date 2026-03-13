@@ -31,10 +31,10 @@ export default function ElRitual() {
       {/* Illustrations */}
       <section className="px-6 py-8 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {["/images/ritual/crow.png", "/images/ritual/cthulhu.png", "/images/ritual/pennywise.png"].map((src, i) => (
+          {["/images/ritual/crow.png", "/images/ritual/pennywise.png", "/images/ritual/cthulhu.png"].map((src, i) => (
             <div key={i} className="bg-card border border-primary/20 overflow-hidden">
-              <div className="aspect-[3/4]">
-                <img src={src} alt="" className="w-full h-full object-cover" />
+              <div className="aspect-[3/4] flex items-center justify-center">
+                <img src={src} alt="" className="w-full h-full object-contain" />
               </div>
             </div>
           ))}
