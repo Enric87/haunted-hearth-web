@@ -96,7 +96,7 @@ export default function Index() {
           to="/el-ritual"
           className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
-          VER EL RITUAL
+          VER LA FAMILIA
         </Link>
       </section>
 
