@@ -116,8 +116,9 @@
 .drop-cap::first-letter {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
-  float: left;
-  margin-right: 8px;
-  line-height: 1;
+  display: inline-block;
+  margin-right: 0;
+  line-height: 0.8;
+  vertical-align: baseline;
   color: hsl(var(--gold));
 }
