@@ -21,6 +21,12 @@ export interface YearData {
 
 export const galeriaData: YearData[] = [
   {
+    year: "2023",
+    people: [],
+    photos: [],
+    videos: [],
+  },
+  {
     year: "2024",
     introText: "En 2024 no hubo rostros.\nSolo pruebas… y testigos.",
     people: [],
