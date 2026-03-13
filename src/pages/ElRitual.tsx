@@ -28,6 +28,21 @@ export default function ElRitual() {
 
       <SectionSeparator />
 
+      {/* Illustrations */}
+      <section className="px-6 py-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {["/images/ritual/crow.png", "/images/ritual/cthulhu.png", "/images/ritual/pennywise.png"].map((src, i) => (
+            <div key={i} className="bg-card border border-primary/20 overflow-hidden">
+              <div className="aspect-[3/4]">
+                <img src={src} alt="" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <SectionSeparator />
+
       {/* Rules */}
       <section className="px-6 py-8 max-w-2xl mx-auto">
         <h2 className="font-cormorant text-xl text-primary tracking-[0.03em] font-medium mb-6 text-center uppercase">
