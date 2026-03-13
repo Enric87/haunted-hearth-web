@@ -12,13 +12,13 @@ const members = [
 {
   name: "EMILI",
   image: "/images/emili.png",
-  description: "Decorador & escenografía. El arquitecto del miedo tangible. Descerebra cada rincón y decora el devenir de la locura."
-},
-{
-  name: "BRUNO",
-  image: "/images/bruno.png",
-  description: "Edición de video  y VFX. Graba el pulso de la locura. Ensambla las visiones de la casa. Terror frame a frame. Pánico en cada toma..."
-}];
+    description: "Decorador & escenografía. El arquitecto del miedo tangible. Descerebra cada rincón y decora el devenir de la locura. Arrastra los miedos hacia lo desconocido."
+  },
+  {
+    name: "BRUNO",
+    image: "/images/bruno.png",
+    description: "Escritura maligna. Edición de video y VFX. Escribe desde las entrañas del infierno. Graba el pulso de la locura. Ensambla las visiones de la casa. Terror frame a frame. Pánico en cada toma..."
+  }];
 
 
 export default function LaFamilia() {
