@@ -50,7 +50,14 @@ export default function ElRitual() {
         <h1 className="font-cormorant text-3xl md:text-5xl font-semibold text-foreground mb-6 tracking-[0.04em] uppercase">
           EL RITUAL
         </h1>
-        <p className="font-cormorant text-lg md:text-xl text-muted-foreground leading-[1.7] drop-cap">Sean ustedes bienvenidos a la multiversalidad. Les invitamos a descender con nosotros al profundo abismo de las mentes más perversas de la literatura tétrica y fantástica. En este lugar el aire cambia de textura poro a poro, introduciéndoles en un paraje desolador y bañado en zozobra.
+        <p className="font-cormorant text-lg md:text-xl text-muted-foreground leading-[1.7] drop-cap">
+          Sean ustedes bienvenidos a la multiversalidad. Les invitamos a descender con nosotros al profundo abismo de las mentes más perversas de la literatura tétrica y fantástica. En este lugar el aire cambia de textura poro a poro, introduciéndoles en un paraje desolador y bañado en zozobra.
+          <br /><br />
+          Un interminable pasillo. Los que subieron antes. Los que no miran igual. Silencio.
+          <br /><br />
+          Un escritorio desolado llora su historia. Un cuervo grazna de dolor. Algo resplandece en la fría oscuridad. Las almas proliferan en la tristeza más opaca. Símbolos perdidos. Imágenes desgarradoras sangran en el subconsciente. Tentáculos oscuros vierten miradas penetrantes en los corazones.
+          <br /><br />
+          Y ahora… si aún conservan el valor —o la curiosidad— crucen el umbral. Las puertas ya están abiertas… y algo dentro lleva tiempo esperando su visita.
         </p>
       </section>
 
