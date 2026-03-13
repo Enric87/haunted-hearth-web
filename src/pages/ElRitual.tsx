@@ -28,18 +28,6 @@ export default function ElRitual() {
 
       <SectionSeparator />
 
-      <section className="px-6 max-w-3xl mx-auto space-y-12">
-        {zones.map((zone, i) => <div key={i}>
-            <h2 className="font-cormorant text-xl md:text-2xl text-gold tracking-[0.03em] font-medium mb-3 uppercase">
-              {zone.title}
-            </h2>
-            <p className="font-cormorant text-lg text-muted-foreground leading-[1.7]">{zone.text}</p>
-            {i < zones.length - 1 && <div className="separator-blood mt-10 max-w-[120px]" />}
-          </div>)}
-      </section>
-
-      <SectionSeparator />
-
       {/* Rules */}
       <section className="px-6 py-8 max-w-2xl mx-auto">
         <h2 className="font-cormorant text-xl text-primary tracking-[0.03em] font-medium mb-6 text-center uppercase">
