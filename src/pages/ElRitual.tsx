@@ -2,41 +2,6 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionSeparator from "@/components/SectionSeparator";
 
-const zones = [
-{
-  title: "Exterior",
-  text: "Antes de entrar, ya estás dentro. Actores fuera… invitando. Un balcón largo: voces que convocan."
-},
-{
-  title: "Umbral",
-  text: "Cementerio exterior. El aire cambia. Cruzas al invernadero: la humedad lo recuerda todo."
-},
-{
-  title: "Planta baja",
-  text: "Un pasillo con tres nombres y una sola intención. Poe. King. Lovecraft. Actores dentro: te guían… y te miden."
-},
-{
-  title: "Escaleras",
-  text: "Rostros del ritual. Los que subieron antes. Los que no miran igual."
-},
-{
-  title: "1ª Planta — Biblioteca",
-  text: "Un archivo vivo. Una sala de invocación."
-},
-{
-  title: "1ª Planta — Lavabo",
-  text: "Apagón. Silencio. Algo puede responder desde donde no debería."
-},
-{
-  title: "1ª Planta — Puerta de cocina",
-  text: "No se entra. Cristales con hologramas cambiantes: símbolos, palabras, sombras… los tres mundos discuten."
-},
-{
-  title: "1ª Planta — Comedor",
-  text: "Televisión con piezas creadas para el ritual. Sofá, comedor, decoración densa. Arriba: velas flotantes. Abajo: tu respiración."
-}];
-
-
 const rules = [
 "Respeta el espacio y a los actores.",
 "No toques la decoración.",
