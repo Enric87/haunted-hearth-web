@@ -93,7 +93,7 @@ export default function Index() {
           Año tras año incrementamos la angustia, porque la imaginación y la creatividad no tienen límites.
         </p>
         <Link
-          to="/el-ritual"
+          to="/la-familia"
           className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           VER LA FAMILIA
