@@ -72,14 +72,6 @@ export default function Index() {
             playsInline
           />
         </div>
-        <div className="text-center mt-8">
-          <Link
-            to="/el-ritual"
-            className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
-          >
-            DESCIENDE AL RITUAL
-          </Link>
-        </div>
       </section>
 
       <SectionSeparator />
@@ -91,6 +83,21 @@ export default function Index() {
             <AuthorCard key={a.name} {...a} onClick={() => setSelectedAuthor(a)} />
           ))}
         </div>
+      </section>
+
+      <SectionSeparator />
+
+      {/* CTA */}
+      <section className="text-center px-6 py-12">
+        <p className="font-cormorant text-xl md:text-2xl lg:text-3xl text-gold italic mb-8 max-w-2xl mx-auto">
+          Año tras año incrementamos la angustia, porque la imaginación y la creatividad no tienen límites.
+        </p>
+        <Link
+          to="/el-ritual"
+          className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+        >
+          VER EL RITUAL
+        </Link>
       </section>
 
       <SectionSeparator />
