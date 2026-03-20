@@ -179,10 +179,9 @@ export default function Galeria() {
 
       <section className="text-center pb-8">
         <Link
-          to="/"
+          to="/el-acceso"
           className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
-          
-          VOLVER A LA LLAMADA
+          VER EL ACCESO
         </Link>
       </section>
 

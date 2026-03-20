@@ -59,10 +59,9 @@ export default function ElRitual() {
       <SectionSeparator />
 
       <section className="text-center pb-8">
-        <Link to="/el-acceso"
+        <Link to="/galeria"
         className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
-          
-          CONSULTA EL ACCESO
+          VER LO QUE YA DESPERTAMOS
         </Link>
       </section>
     </Layout>);
