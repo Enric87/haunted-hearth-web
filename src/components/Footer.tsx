@@ -43,7 +43,7 @@ export default function Footer({ variant = "internal" }: FooterProps) {
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="YouTube"
             >
-              <Youtube className="w-5 h-5" />
+              <Youtube className="w-6 h-6" />
             </a>
           </div>
         </div>
