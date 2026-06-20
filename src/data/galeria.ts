@@ -23,15 +23,27 @@ export const galeriaData: YearData[] = [
   {
     year: "2023",
     people: [],
-    photos: [],
-    videos: [],
+    photos: [
+      // Copia tus fotos en public/images/galeria/2023 y añade entradas así:
+      // { src: "/images/galeria/2023/foto-1.jpg", alt: "Foto del ritual de 2023" },
+    ],
+    videos: [
+      // Copia tus vídeos en public/videos/galeria/2023 y añade entradas así:
+      // { src: "/videos/galeria/2023/video-1.mp4", alt: "Vídeo del ritual de 2023" },
+    ],
   },
   {
     year: "2024",
-    introText: "En 2024 no hubo rostros.\nSolo pruebas… y testigos.",
+    introText: "En 2024 no hubo rostros.\nSolo pruebas... y testigos.",
     people: [],
-    photos: [],
-    videos: [],
+    photos: [
+      // Copia tus fotos en public/images/galeria/2024 y añade entradas así:
+      // { src: "/images/galeria/2024/foto-1.jpg", alt: "Foto del ritual de 2024" },
+    ],
+    videos: [
+      // Copia tus vídeos en public/videos/galeria/2024 y añade entradas así:
+      // { src: "/videos/galeria/2024/video-1.mp4", alt: "Vídeo del ritual de 2024" },
+    ],
   },
   {
     year: "2025",
