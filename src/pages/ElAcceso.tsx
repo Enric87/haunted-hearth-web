@@ -7,7 +7,7 @@ const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeU
 const googleMapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
 
 const tips = [
-  "Ven con tiempo. La entrada es por turnos.",
+  "Ven con tiempo. La entrada es gratuita y por turnos.",
   "Parking: zona por definir.",
   "Ropa cómoda. El ritual no espera.",
   "Si vienes con menores, decide antes de cruzar el umbral.",
