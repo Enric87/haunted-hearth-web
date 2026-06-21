@@ -1,13 +1,17 @@
-import { MapPin, Clock, ExternalLink, MessageCircle } from "lucide-react";
+import { Clock, ExternalLink, MapPin, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionSeparator from "@/components/SectionSeparator";
 
-const tips = [
-"Ven con tiempo. La entrada es por turnos.",
-"Parking: zona por definir.",
-"Ropa cómoda. El ritual no espera.",
-"Si vienes con menores, decide antes de cruzar el umbral."];
+const address = "C/ Alberes, 4, 17469 Vilamalla, Girona";
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+const googleMapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
 
+const tips = [
+  "Ven con tiempo. La entrada es por turnos.",
+  "Parking: zona por definir.",
+  "Ropa cómoda. El ritual no espera.",
+  "Si vienes con menores, decide antes de cruzar el umbral.",
+];
 
 export default function ElAcceso() {
   return (
@@ -19,7 +23,6 @@ export default function ElAcceso() {
       </section>
 
       <section className="px-6 max-w-3xl mx-auto space-y-8">
-        {/* Address */}
         <div className="flex items-start gap-3">
           <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
           <div>
@@ -28,7 +31,6 @@ export default function ElAcceso() {
           </div>
         </div>
 
-        {/* Time */}
         <div className="flex items-start gap-3">
           <Clock className="w-5 h-5 text-primary mt-0.5 shrink-0" />
           <div>
@@ -37,39 +39,43 @@ export default function ElAcceso() {
           </div>
         </div>
 
-        {/* Map placeholder */}
-        <div className="aspect-video bg-secondary border border-border rounded-sm flex items-center justify-center">
-          <p className="text-muted-foreground text-sm">Mapa Google Maps (pendiente dirección)</p>
+        <div className="aspect-video bg-secondary border border-border rounded-sm overflow-hidden">
+          <iframe
+            title="Mapa de C/ Alberes, 4, Vilamalla"
+            src={googleMapsEmbedUrl}
+            className="w-full h-full border-0 grayscale contrast-125 opacity-90"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
       </section>
 
       <SectionSeparator />
 
-      {/* Recommendations */}
       <section className="px-6 max-w-2xl mx-auto">
         <h2 className="font-cormorant text-xl text-gold tracking-[0.03em] font-medium mb-6 text-center uppercase">
           RECOMENDACIONES
         </h2>
         <ul className="space-y-3">
-          {tips.map((t, i) =>
-          <li key={i} className="flex items-start gap-3 font-cormorant text-lg text-muted-foreground leading-[1.7]">
-              <span className="text-primary mt-0.5">—</span>
+          {tips.map((t, i) => (
+            <li key={i} className="flex items-start gap-3 font-cormorant text-lg text-muted-foreground leading-[1.7]">
+              <span className="text-primary mt-0.5">-</span>
               <span>{t}</span>
             </li>
-          )}
+          ))}
         </ul>
       </section>
 
       <SectionSeparator />
 
-      {/* CTAs */}
       <section className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8 px-6">
         <a
-          href="https://maps.google.com"
+          href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
-          
+          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+        >
           <ExternalLink className="w-4 h-4" />
           ABRIR EN GOOGLE MAPS
         </a>
@@ -77,12 +83,12 @@ export default function ElAcceso() {
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors">
-          
+          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
+        >
           <MessageCircle className="w-4 h-4" />
           ESCRÍBENOS
         </a>
       </section>
-    </Layout>);
-
+    </Layout>
+  );
 }
