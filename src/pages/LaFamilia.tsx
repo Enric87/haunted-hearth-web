@@ -50,16 +50,16 @@ export default function LaFamilia() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/el-ritual"
-            className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
-            
-            VER EL RITUAL
-          </Link>
-          <Link
             to="/"
             className="inline-block font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors">
             
             VER LA LLAMADA
+          </Link>
+          <Link
+            to="/el-ritual"
+            className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
+            
+            VER EL RITUAL
           </Link>
         </div>
       </section>
