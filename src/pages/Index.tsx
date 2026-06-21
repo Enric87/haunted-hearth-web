@@ -43,7 +43,7 @@ export default function Index() {
         <p className="font-cormorant text-3xl md:text-5xl tracking-[0.12em] text-gold mb-4">
           31 de octubre de 2026
         </p>
-        <p className="text-sm tracking-[0.2em] text-muted-foreground mb-8">
+        <p className="text-base md:text-lg tracking-[0.2em] text-muted-foreground mb-8">
           de 18h a 22h
         </p>
         <Countdown />
