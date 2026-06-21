@@ -8,7 +8,6 @@ const googleMapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(a
 
 const tips = [
   "Ven con tiempo. La entrada es gratuita y por turnos.",
-  "Parking: zona por definir.",
   "Ropa cómoda. El ritual no espera.",
   "Si vienes con menores, decide antes de cruzar el umbral.",
 ];
