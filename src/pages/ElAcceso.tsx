@@ -43,7 +43,7 @@ export default function ElAcceso() {
           <iframe
             title="Mapa de C/ Alberes, 4, Vilamalla"
             src={googleMapsEmbedUrl}
-            className="w-full h-full border-0 grayscale contrast-125 opacity-90"
+            className="w-full h-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
