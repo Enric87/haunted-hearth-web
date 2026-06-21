@@ -49,10 +49,10 @@ export default function LaFamilia() {
         <p className="font-cormorant text-lg text-muted-foreground leading-[1.7] mb-8">Año tras año incrementamos la angustia, porque la imaginación y la creatividad no tienen límites.
         </p>
         <Link
-          to="/el-ritual"
+          to="/"
           className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
           
-          VER EL RITUAL
+          VER LA LLAMADA
         </Link>
       </section>
     </Layout>);
