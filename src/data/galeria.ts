@@ -47,12 +47,12 @@ export const galeriaData: YearData[] = [
   {
     year: "2025",
     people: [
-      { id: "kike", name: "Kike", posterUrl: "/images/posters/kike-2025.jpg", photos: [], videos: [] },
-      { id: "emili", name: "Emili", posterUrl: "/images/posters/emili-2025.jpg", photos: [], videos: [] },
-      { id: "bruno", name: "Bruno", posterUrl: "/images/posters/bruno-2025.jpg", photos: [], videos: [] },
-      { id: "adri", name: "Adri", posterUrl: "/images/posters/adri-2025.jpg", photos: [], videos: [] },
-      { id: "vero-adri", name: "Veronica", posterUrl: "/images/posters/vero-adri-2025.jpg", photos: [], videos: [] },
-      { id: "vero-bruno", name: "Vero", posterUrl: "/images/posters/vero-bruno-2025.jpg", photos: [], videos: [] },
+      { id: "kike", name: "Kike", posterUrl: "/images/posters/kike-2025-web.jpg", photos: [], videos: [] },
+      { id: "emili", name: "Emili", posterUrl: "/images/posters/emili-2025-web.jpg", photos: [], videos: [] },
+      { id: "bruno", name: "Bruno", posterUrl: "/images/posters/bruno-2025-web.jpg", photos: [], videos: [] },
+      { id: "adri", name: "Adri", posterUrl: "/images/posters/adri-2025-web.jpg", photos: [], videos: [] },
+      { id: "vero-adri", name: "Veronica", posterUrl: "/images/posters/vero-adri-2025-web.jpg", photos: [], videos: [] },
+      { id: "vero-bruno", name: "Vero", posterUrl: "/images/posters/vero-bruno-2025-web.jpg", photos: [], videos: [] },
     ],
     photos: [],
     videos: [],
