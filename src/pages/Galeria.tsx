@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import SectionSeparator from "@/components/SectionSeparator";
 import PosterCard from "@/components/PosterCard";
 import PosterModal from "@/components/PosterModal";
-import { galeriaData, type Person, type MediaItem } from "@/data/galeria";
+import { galeriaData, type MediaItem, type Person } from "@/data/galeria";
 
 type FilterType = "Rostros" | "Fotos" | "Videos";
 
@@ -15,7 +15,10 @@ const filterLabels: Record<FilterType, string> = {
   Videos: "VÍDEOS",
 };
 
-const emptyTemplates: Record<"Fotos" | "Videos", string[]> = {
+const yearsWithRostros = ["2025", "2026"];
+
+const emptyTemplates: Record<FilterType, string[]> = {
+  Rostros: ["Rostro 1", "Rostro 2", "Rostro 3"],
   Fotos: ["Foto 1", "Foto 2", "Foto 3"],
   Videos: ["Vídeo 1", "Vídeo 2", "Vídeo 3"],
 };
@@ -27,24 +30,18 @@ export default function Galeria() {
   const [modalPerson, setModalPerson] = useState<Person | null>(null);
 
   const yearData = galeriaData.find((d) => d.year === selectedYear)!;
-  const hasPosters = yearData.people.length > 0;
+  const canShowRostros = yearsWithRostros.includes(selectedYear);
 
-  const filters: FilterType[] =
-    selectedYear === "2025" && hasPosters ? ["Rostros", "Fotos", "Videos"] : ["Fotos", "Videos"];
+  const filters: FilterType[] = canShowRostros ? ["Rostros", "Fotos", "Videos"] : ["Fotos", "Videos"];
 
   const handleYearChange = (year: string) => {
     setSelectedYear(year);
-    setSelectedFilter(year === "2025" ? "Rostros" : "Fotos");
+    setSelectedFilter(yearsWithRostros.includes(year) ? "Rostros" : "Fotos");
   };
 
-  const showPosters = hasPosters && selectedFilter === "Rostros";
+  const showPosters = selectedFilter === "Rostros";
   const showPhotos = selectedFilter === "Fotos";
   const showVideos = selectedFilter === "Videos";
-
-  const hasContent =
-    (showPosters && yearData.people.length > 0) ||
-    (showPhotos && yearData.photos.length > 0) ||
-    (showVideos && yearData.videos.length > 0);
 
   const showIntro = selectedYear === "2024" && yearData.introText;
 
@@ -64,7 +61,7 @@ export default function Galeria() {
         </p>
       </section>
 
-      <div className="flex justify-center gap-4 px-6 mb-6">
+      <div className="flex flex-wrap justify-center gap-4 px-6 mb-6">
         {galeriaData.map((d) => (
           <button
             key={d.year}
@@ -80,7 +77,7 @@ export default function Galeria() {
         ))}
       </div>
 
-      <div className="flex justify-center gap-4 px-6 mb-8">
+      <div className="flex flex-wrap justify-center gap-4 px-6 mb-8">
         {filters.map((f) => (
           <button
             key={f}
@@ -120,6 +117,15 @@ export default function Galeria() {
           </div>
         )}
 
+        {showPosters && yearData.people.length === 0 && (
+          <TemplateGrid
+            items={emptyTemplates.Rostros}
+            selectedYear={selectedYear}
+            aspectClassName="aspect-[3/4]"
+            text="Añade un rostro"
+          />
+        )}
+
         {showPhotos && yearData.photos.length > 0 && (
           <div className="mb-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -137,21 +143,12 @@ export default function Galeria() {
         )}
 
         {showPhotos && yearData.photos.length === 0 && (
-          <div className="mb-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {emptyTemplates.Fotos.map((label) => (
-                <div
-                  key={`${selectedYear}-${label}`}
-                  className="aspect-square border border-dashed border-border bg-secondary/40 flex flex-col items-center justify-center text-center px-6"
-                >
-                  <span className="font-cinzel text-primary text-sm tracking-[0.2em]">{label}</span>
-                  <span className="mt-3 font-cormorant text-muted-foreground text-base">
-                    Añade una imagen en {selectedYear}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <TemplateGrid
+            items={emptyTemplates.Fotos}
+            selectedYear={selectedYear}
+            aspectClassName="aspect-square"
+            text="Añade una imagen"
+          />
         )}
 
         {showVideos && yearData.videos.length > 0 && (
@@ -167,21 +164,12 @@ export default function Galeria() {
         )}
 
         {showVideos && yearData.videos.length === 0 && (
-          <div className="mb-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {emptyTemplates.Videos.map((label) => (
-                <div
-                  key={`${selectedYear}-${label}`}
-                  className="aspect-video border border-dashed border-border bg-secondary/40 flex flex-col items-center justify-center text-center px-6"
-                >
-                  <span className="font-cinzel text-primary text-sm tracking-[0.2em]">{label}</span>
-                  <span className="mt-3 font-cormorant text-muted-foreground text-base">
-                    Añade un vídeo en {selectedYear}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <TemplateGrid
+            items={emptyTemplates.Videos}
+            selectedYear={selectedYear}
+            aspectClassName="aspect-video"
+            text="Añade un vídeo"
+          />
         )}
       </section>
 
@@ -218,5 +206,32 @@ export default function Galeria() {
         onOpenChange={(open) => !open && setModalPerson(null)}
       />
     </Layout>
+  );
+}
+
+interface TemplateGridProps {
+  items: string[];
+  selectedYear: string;
+  aspectClassName: string;
+  text: string;
+}
+
+function TemplateGrid({ items, selectedYear, aspectClassName, text }: TemplateGridProps) {
+  return (
+    <div className="mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {items.map((label) => (
+          <div
+            key={`${selectedYear}-${label}`}
+            className={`${aspectClassName} border border-dashed border-border bg-secondary/40 flex flex-col items-center justify-center text-center px-6`}
+          >
+            <span className="font-cinzel text-primary text-sm tracking-[0.2em]">{label}</span>
+            <span className="mt-3 font-cormorant text-muted-foreground text-base">
+              {text} en {selectedYear}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

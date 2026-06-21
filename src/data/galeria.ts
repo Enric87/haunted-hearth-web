@@ -58,4 +58,19 @@ export const galeriaData: YearData[] = [
     photos: [],
     videos: [],
   },
+  {
+    year: "2026",
+    people: [
+      // Copia tus posters en public/images/posters y añade entradas así:
+      // { id: "nombre", name: "Nombre", posterUrl: "/images/posters/nombre-2026.jpg", photos: [], videos: [] },
+    ],
+    photos: [
+      // Copia tus fotos en public/images/galeria/2026 y añade entradas así:
+      // { src: "/images/galeria/2026/foto-1.jpg", alt: "Foto del ritual de 2026" },
+    ],
+    videos: [
+      // Copia tus vídeos en public/videos/galeria/2026 y añade entradas así:
+      // { src: "/videos/galeria/2026/video-1.mp4", alt: "Vídeo del ritual de 2026" },
+    ],
+  },
 ];
