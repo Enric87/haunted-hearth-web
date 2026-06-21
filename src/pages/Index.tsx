@@ -44,7 +44,7 @@ export default function Index() {
           31 de octubre de 2026
         </p>
         <p className="text-sm tracking-[0.2em] text-muted-foreground mb-8">
-          18h a 22h
+          de 18h a 22h
         </p>
         <Countdown />
       </section>
