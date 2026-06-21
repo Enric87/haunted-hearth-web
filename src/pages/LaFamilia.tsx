@@ -48,12 +48,20 @@ export default function LaFamilia() {
       <section className="px-6 py-8 text-center max-w-2xl mx-auto">
         <p className="font-cormorant text-lg text-muted-foreground leading-[1.7] mb-8">Año tras año incrementamos la angustia, porque la imaginación y la creatividad no tienen límites.
         </p>
-        <Link
-          to="/"
-          className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
-          
-          VER LA LLAMADA
-        </Link>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/el-ritual"
+            className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
+            
+            VER EL RITUAL
+          </Link>
+          <Link
+            to="/"
+            className="inline-block font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors">
+            
+            VER LA LLAMADA
+          </Link>
+        </div>
       </section>
     </Layout>);
 

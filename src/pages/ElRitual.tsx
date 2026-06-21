@@ -58,9 +58,13 @@ export default function ElRitual() {
 
       <SectionSeparator />
 
-      <section className="text-center pb-8">
-        <Link to="/la-familia"
+      <section className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8 px-6">
+        <Link to="/galeria"
         className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
+          VER LO QUE YA DESPERTAMOS
+        </Link>
+        <Link to="/la-familia"
+        className="inline-block font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors">
           VER LA FAMILIA
         </Link>
       </section>
