@@ -34,7 +34,6 @@ export const galeriaData: YearData[] = [
   },
   {
     year: "2024",
-    introText: "En 2024 no hubo rostros.\nSolo pruebas... y testigos.",
     people: [],
     photos: [
       // Copia tus fotos en public/images/galeria/2024 y añade entradas así:
