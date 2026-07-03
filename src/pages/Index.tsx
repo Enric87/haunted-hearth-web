@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Volume2, VolumeX } from "lucide-react";
+import { Play, Volume2, VolumeX } from "lucide-react";
 
 import Layout from "@/components/Layout";
 import Countdown from "@/components/Countdown";
@@ -32,6 +32,7 @@ const authors = [
 export default function Index() {
   const [selectedAuthor, setSelectedAuthor] = useState<typeof authors[number] | null>(null);
   const [musicEnabled, setMusicEnabled] = useState(false);
+  const [videoStarted, setVideoStarted] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -84,6 +85,25 @@ export default function Index() {
     await playMusic();
   };
 
+  const startVideoWithMusic = async () => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return;
+    }
+
+    setVideoStarted(true);
+    setMusicEnabled(true);
+
+    try {
+      await video.play();
+      await playMusic();
+    } catch {
+      setMusicEnabled(false);
+      setVideoStarted(false);
+    }
+  };
+
   return (
     <Layout footerVariant="home">
       {/* Hero: Logo + Info */}
@@ -120,20 +140,35 @@ export default function Index() {
             ref={videoRef}
             className="w-full h-full object-cover"
             src="/videos/hero.mp4"
-            autoPlay
             muted
             loop
             playsInline
             onPlay={() => {
+              setVideoStarted(true);
               if (musicEnabled) void playMusic();
             }}
-            onPause={() => audioRef.current?.pause()}
+            onPause={() => {
+              audioRef.current?.pause();
+              setVideoStarted(false);
+            }}
             onSeeking={syncAudioToVideo}
             onTimeUpdate={() => {
               if (musicEnabled) syncAudioToVideo();
             }}
           />
           <audio ref={audioRef} src="/audio/horror-trailer.mp3" loop preload="auto" />
+          {!videoStarted && (
+            <button
+              type="button"
+              onClick={startVideoWithMusic}
+              className="absolute inset-0 flex items-center justify-center bg-background/20 text-primary transition-colors hover:bg-background/10"
+              aria-label="Reproducir video con música"
+            >
+              <span className="inline-flex h-20 w-20 items-center justify-center rounded-full border border-primary/80 bg-background/70 backdrop-blur-sm transition-transform hover:scale-105">
+                <Play className="ml-1 h-9 w-9 fill-current" />
+              </span>
+            </button>
+          )}
           <button
             type="button"
             onClick={toggleMusic}
