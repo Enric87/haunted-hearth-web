@@ -33,7 +33,7 @@ export default function ElAcceso() {
         <div className="flex items-start gap-3">
           <Clock className="w-5 h-5 text-primary mt-0.5 shrink-0" />
           <div>
-            <p className="text-foreground font-medium">30 de octubre de 2026</p>
+            <p className="text-foreground font-medium">31 de octubre de 2026</p>
             <p className="text-sm text-muted-foreground">18h a 22h</p>
           </div>
         </div>
