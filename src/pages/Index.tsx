@@ -41,7 +41,7 @@ export default function Index() {
           className="w-[42rem] md:w-[58rem] lg:w-[68rem] mb-8"
         />
         <p className="font-cormorant text-3xl md:text-5xl tracking-[0.12em] text-gold mb-4">
-          31 de octubre de 2026
+          30 de octubre de 2026
         </p>
         <p className="text-lg md:text-xl tracking-[0.2em] text-muted-foreground mb-8">
           de 18h a 22h
