@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Volume2, VolumeX } from "lucide-react";
 
 import Layout from "@/components/Layout";
 import Countdown from "@/components/Countdown";
@@ -30,6 +31,58 @@ const authors = [
 
 export default function Index() {
   const [selectedAuthor, setSelectedAuthor] = useState<typeof authors[number] | null>(null);
+  const [musicEnabled, setMusicEnabled] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const syncAudioToVideo = () => {
+    const video = videoRef.current;
+    const audio = audioRef.current;
+
+    if (!video || !audio || !Number.isFinite(audio.duration) || audio.duration === 0) {
+      return;
+    }
+
+    const targetTime = video.currentTime % audio.duration;
+    if (Math.abs(audio.currentTime - targetTime) > 0.35) {
+      audio.currentTime = targetTime;
+    }
+  };
+
+  const playMusic = async () => {
+    const video = videoRef.current;
+    const audio = audioRef.current;
+
+    if (!video || !audio) {
+      return;
+    }
+
+    syncAudioToVideo();
+    audio.volume = 0.75;
+
+    try {
+      await audio.play();
+    } catch {
+      setMusicEnabled(false);
+    }
+  };
+
+  const toggleMusic = async () => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    if (musicEnabled) {
+      audio.pause();
+      setMusicEnabled(false);
+      return;
+    }
+
+    setMusicEnabled(true);
+    await playMusic();
+  };
 
   return (
     <Layout footerVariant="home">
@@ -64,13 +117,31 @@ export default function Index() {
       <section className="w-full py-8">
         <div className="relative aspect-video bg-card overflow-hidden">
           <video
+            ref={videoRef}
             className="w-full h-full object-cover"
             src="/videos/hero.mp4"
             autoPlay
             muted
             loop
             playsInline
+            onPlay={() => {
+              if (musicEnabled) void playMusic();
+            }}
+            onPause={() => audioRef.current?.pause()}
+            onSeeking={syncAudioToVideo}
+            onTimeUpdate={() => {
+              if (musicEnabled) syncAudioToVideo();
+            }}
           />
+          <audio ref={audioRef} src="/audio/horror-trailer.mp3" loop preload="auto" />
+          <button
+            type="button"
+            onClick={toggleMusic}
+            className="absolute bottom-4 right-4 inline-flex h-11 w-11 items-center justify-center border border-primary/70 bg-background/70 text-primary backdrop-blur-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+            aria-label={musicEnabled ? "Silenciar música" : "Activar música"}
+          >
+            {musicEnabled ? <Volume2 className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+          </button>
         </div>
       </section>
 
