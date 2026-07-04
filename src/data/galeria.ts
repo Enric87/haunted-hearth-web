@@ -76,7 +76,6 @@ export const galeriaData: YearData[] = [
       { id: "vero-bruno", name: "Vero", posterUrl: "/images/posters/vero-bruno-2025-web.jpg", photos: [], videos: [] },
     ],
     photos: [
-      { src: "/images/galeria/2025/tematica-biblioteca-luz.jpg", alt: "Biblioteca iluminada de Halloween Vilamalla 2025" },
       { src: "/images/galeria/2025/tematica-biblioteca.jpg", alt: "Decoracion de biblioteca de Halloween Vilamalla 2025" },
       { src: "/images/galeria/2025/tematica-escalera.jpg", alt: "Decoracion de escalera de Halloween Vilamalla 2025" },
       { src: "/images/galeria/2025/tematica-escalera-rostros.jpeg", alt: "Escalera decorada con rostros de Halloween Vilamalla 2025" },
@@ -85,6 +84,7 @@ export const galeriaData: YearData[] = [
       { src: "/images/galeria/2025/tematica-pasillo.jpeg", alt: "Decoracion del pasillo de Halloween Vilamalla 2025" },
       { src: "/images/galeria/2025/selfie-emili-lavabo.jpg", alt: "Selfie de Emili en el lavabo 2025" },
       { src: "/images/galeria/2025/selfie-emili-bruno-bano.jpg", alt: "Selfie de Emili y Bruno en el bano 2025" },
+      { src: "/images/galeria/2025/selfie-gerard-kike-comedor.jpg", alt: "Gerard y Kike en el comedor de Halloween Vilamalla 2025" },
     ],
     videos: [],
   },
