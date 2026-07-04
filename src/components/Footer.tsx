@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface FooterProps {
   variant?: "home" | "internal";
@@ -50,17 +51,17 @@ export default function Footer({ variant = "internal" }: FooterProps) {
       )}
 
       <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-        <a href="#" className="hover:text-foreground transition-colors">
+        <Link to="/aviso-legal-privacidad" className="hover:text-foreground transition-colors">
           Aviso legal / Privacidad
-        </a>
+        </Link>
         <span>·</span>
-        <a href="#" className="hover:text-foreground transition-colors">
+        <Link to="/terminos-condiciones" className="hover:text-foreground transition-colors">
           Términos y condiciones
-        </a>
+        </Link>
         <span>·</span>
-        <a href="#" className="hover:text-foreground transition-colors">
+        <Link to="/cookies" className="hover:text-foreground transition-colors">
           Cookies
-        </a>
+        </Link>
       </div>
 
       <p className="text-center text-xs text-muted-foreground mt-4 opacity-40">
