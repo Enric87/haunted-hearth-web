@@ -59,6 +59,8 @@ export const galeriaData: YearData[] = [
     people: [],
     photos: [
       { src: "/images/galeria/2024/emili-disfrazado.jpg", alt: "Emili disfrazado en Halloween Vilamalla 2024" },
+      { src: "/images/galeria/2024/kike-joker.jpg", alt: "Kike disfrazado de Joker en Halloween Vilamalla 2024" },
+      { src: "/images/galeria/2024/selfie-emili-jesus.jpg", alt: "Selfie de Emili y Jesus en Halloween Vilamalla 2024" },
     ],
     videos: [
       // Copia tus videos en public/videos/galeria/2024 y anade entradas asi:
