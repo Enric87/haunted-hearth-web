@@ -21,6 +21,25 @@ export interface YearData {
 
 export const galeriaData: YearData[] = [
   {
+    year: "2022",
+    people: [],
+    photos: [
+      { src: "/images/galeria/2022/decor-pasillo-puerta-01.jpg", alt: "Decoracion de tumbas y velas del pasillo 2022" },
+      { src: "/images/galeria/2022/decor-pasillo-puerta-02.jpg", alt: "Decoracion del pasillo con tumbas y luces 2022" },
+      { src: "/images/galeria/2022/decor-pasillo-puerta-03.jpg", alt: "Detalle de lapida y calavera en la decoracion 2022" },
+      { src: "/images/galeria/2022/decor-pasillo-puerta-04.jpg", alt: "Detalle de mascara terrorifica de la decoracion 2022" },
+      { src: "/images/galeria/2022/decor-pasillo-puerta-05.jpg", alt: "Decoracion de escalera con telaranas 2022" },
+      { src: "/images/galeria/2022/decor-pasillo-puerta-06.jpg", alt: "Decoracion de cementerio con luces y flores 2022" },
+      { src: "/images/galeria/2022/adri-mestre-bruno.jpg", alt: "Participantes disfrazados en Halloween Vilamalla 2022" },
+      { src: "/images/galeria/2022/bruno-ruth.jpg", alt: "Bruno y Ruth en Halloween Vilamalla 2022" },
+      { src: "/images/galeria/2022/bruno-vero-bruno.jpg", alt: "Bruno y Vero en Halloween Vilamalla 2022" },
+      { src: "/images/galeria/2022/juanma-ruth.jpg", alt: "Juanma y Ruth en Halloween Vilamalla 2022" },
+      { src: "/images/galeria/2022/vero-adri-adri.jpg", alt: "Vero y Adri en Halloween Vilamalla 2022" },
+      { src: "/images/galeria/2022/vero-bruno.jpg", alt: "Vero y Bruno en Halloween Vilamalla 2022" },
+    ],
+    videos: [],
+  },
+  {
     year: "2023",
     people: [],
     photos: [

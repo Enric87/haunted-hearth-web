@@ -133,7 +133,7 @@ export default function Galeria() {
                 <button
                   key={i}
                   onClick={() => setLightbox(photo)}
-                  className="aspect-square bg-secondary border border-border overflow-hidden hover:opacity-80 transition-opacity card-hover"
+                  className="aspect-[4/3] bg-secondary border border-border overflow-hidden hover:opacity-80 transition-opacity card-hover"
                 >
                   <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover" loading="lazy" />
                 </button>
@@ -146,7 +146,7 @@ export default function Galeria() {
           <TemplateGrid
             items={emptyTemplates.Fotos}
             selectedYear={selectedYear}
-            aspectClassName="aspect-square"
+            aspectClassName="aspect-[4/3]"
             text="Añade una imagen"
           />
         )}
