@@ -58,8 +58,7 @@ export const galeriaData: YearData[] = [
     year: "2024",
     people: [],
     photos: [
-      // Copia tus fotos en public/images/galeria/2024 y anade entradas asi:
-      // { src: "/images/galeria/2024/foto-1.jpg", alt: "Foto del ritual de 2024" },
+      { src: "/images/galeria/2024/emili-disfrazado.jpg", alt: "Emili disfrazado en Halloween Vilamalla 2024" },
     ],
     videos: [
       // Copia tus videos en public/videos/galeria/2024 y anade entradas asi:
