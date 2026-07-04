@@ -43,24 +43,27 @@ export const galeriaData: YearData[] = [
     year: "2023",
     people: [],
     photos: [
-      // Copia tus fotos en public/images/galeria/2023 y añade entradas así:
-      // { src: "/images/galeria/2023/foto-1.jpg", alt: "Foto del ritual de 2023" },
+      { src: "/images/galeria/2023/tematica-comedor.jpg", alt: "Comedor decorado de Halloween Vilamalla 2023" },
+      { src: "/images/galeria/2023/tematica-exterior-cementerio.jpg", alt: "Cementerio exterior de Halloween Vilamalla 2023" },
+      { src: "/images/galeria/2023/gente-pasillo-escalera.jpg", alt: "Vero y Adri en el pasillo de Halloween Vilamalla 2023" },
+      { src: "/images/galeria/2023/emili-pruebas.jpg", alt: "Emili preparando pruebas de Halloween Vilamalla 2023" },
+      { src: "/images/galeria/2023/selfie-bruno-vero-bruno.jpg", alt: "Selfie de Bruno, Vero y Bruno en Halloween Vilamalla 2023" },
+      { src: "/images/galeria/2023/selfie-balcon.jpg", alt: "Selfie de grupo en el balcon de Halloween Vilamalla 2023" },
+      { src: "/images/galeria/2023/selfie-balcon-vero-bruno-ruth.jpg", alt: "Selfie de Vero, Bruno y Ruth en el balcon 2023" },
+      { src: "/images/galeria/2023/selfie-vero-bruno-emili-bruno.jpg", alt: "Selfie de Vero, Bruno, Emili y Bruno en Halloween Vilamalla 2023" },
     ],
-    videos: [
-      // Copia tus vídeos en public/videos/galeria/2023 y añade entradas así:
-      // { src: "/videos/galeria/2023/video-1.mp4", alt: "Vídeo del ritual de 2023" },
-    ],
+    videos: [],
   },
   {
     year: "2024",
     people: [],
     photos: [
-      // Copia tus fotos en public/images/galeria/2024 y añade entradas así:
+      // Copia tus fotos en public/images/galeria/2024 y anade entradas asi:
       // { src: "/images/galeria/2024/foto-1.jpg", alt: "Foto del ritual de 2024" },
     ],
     videos: [
-      // Copia tus vídeos en public/videos/galeria/2024 y añade entradas así:
-      // { src: "/videos/galeria/2024/video-1.mp4", alt: "Vídeo del ritual de 2024" },
+      // Copia tus videos en public/videos/galeria/2024 y anade entradas asi:
+      // { src: "/videos/galeria/2024/video-1.mp4", alt: "Video del ritual de 2024" },
     ],
   },
   {
@@ -89,16 +92,16 @@ export const galeriaData: YearData[] = [
   {
     year: "2026",
     people: [
-      // Copia tus posters en public/images/posters y añade entradas así:
+      // Copia tus posters en public/images/posters y anade entradas asi:
       // { id: "nombre", name: "Nombre", posterUrl: "/images/posters/nombre-2026.jpg", photos: [], videos: [] },
     ],
     photos: [
-      // Copia tus fotos en public/images/galeria/2026 y añade entradas así:
+      // Copia tus fotos en public/images/galeria/2026 y anade entradas asi:
       // { src: "/images/galeria/2026/foto-1.jpg", alt: "Foto del ritual de 2026" },
     ],
     videos: [
-      // Copia tus vídeos en public/videos/galeria/2026 y añade entradas así:
-      // { src: "/videos/galeria/2026/video-1.mp4", alt: "Vídeo del ritual de 2026" },
+      // Copia tus videos en public/videos/galeria/2026 y anade entradas asi:
+      // { src: "/videos/galeria/2026/video-1.mp4", alt: "Video del ritual de 2026" },
     ],
   },
 ];
