@@ -30,11 +30,11 @@ export default function PosterModal({ person, year, open, onOpenChange }: Poster
         </DialogHeader>
 
         {/* Poster */}
-        <div className="aspect-[3/4] w-full overflow-hidden border border-border">
+        <div className="aspect-[3/4] w-full border border-border bg-card/40">
           <img
             src={person.posterUrl}
             alt={person.name}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </div>
 
