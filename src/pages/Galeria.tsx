@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionSeparator from "@/components/SectionSeparator";
 import PosterCard from "@/components/PosterCard";
@@ -26,7 +26,7 @@ const emptyTemplates: Record<FilterType, string[]> = {
 export default function Galeria() {
   const [selectedYear, setSelectedYear] = useState("2024");
   const [selectedFilter, setSelectedFilter] = useState<FilterType>("Fotos");
-  const [lightbox, setLightbox] = useState<MediaItem | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [modalPerson, setModalPerson] = useState<Person | null>(null);
 
   const yearData = galeriaData.find((d) => d.year === selectedYear)!;
@@ -42,8 +42,19 @@ export default function Galeria() {
   const showPosters = selectedFilter === "Rostros";
   const showPhotos = selectedFilter === "Fotos";
   const showVideos = selectedFilter === "Videos";
+  const lightbox = lightboxIndex !== null ? yearData.photos[lightboxIndex] ?? null : null;
 
   const showIntro = selectedYear === "2024" && yearData.introText;
+
+  const closeLightbox = () => setLightboxIndex(null);
+  const showPreviousPhoto = () => {
+    if (lightboxIndex === null || yearData.photos.length === 0) return;
+    setLightboxIndex((lightboxIndex - 1 + yearData.photos.length) % yearData.photos.length);
+  };
+  const showNextPhoto = () => {
+    if (lightboxIndex === null || yearData.photos.length === 0) return;
+    setLightboxIndex((lightboxIndex + 1) % yearData.photos.length);
+  };
 
   return (
     <Layout>
@@ -132,7 +143,7 @@ export default function Galeria() {
               {yearData.photos.map((photo, i) => (
                 <button
                   key={i}
-                  onClick={() => setLightbox(photo)}
+                  onClick={() => setLightboxIndex(i)}
                   className="aspect-[4/3] bg-secondary border border-border overflow-hidden hover:opacity-80 transition-opacity card-hover"
                 >
                   <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover" loading="lazy" />
@@ -193,15 +204,44 @@ export default function Galeria() {
       {lightbox && (
         <div
           className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center p-6"
-          onClick={() => setLightbox(null)}
+          onClick={closeLightbox}
         >
           <button
             className="absolute top-6 right-6 text-foreground hover:text-primary"
-            onClick={() => setLightbox(null)}
+            onClick={closeLightbox}
           >
             <X className="w-8 h-8" />
           </button>
-          <img src={lightbox.src} alt={lightbox.alt} className="max-w-full max-h-[80vh] object-contain" />
+          {yearData.photos.length > 1 && (
+            <button
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 border border-border bg-background/70 text-foreground hover:text-primary hover:border-primary transition-colors p-3"
+              onClick={(event) => {
+                event.stopPropagation();
+                showPreviousPhoto();
+              }}
+              aria-label="Foto anterior"
+            >
+              <ChevronLeft className="w-7 h-7" />
+            </button>
+          )}
+          <img
+            src={lightbox.src}
+            alt={lightbox.alt}
+            className="max-w-full max-h-[80vh] object-contain"
+            onClick={(event) => event.stopPropagation()}
+          />
+          {yearData.photos.length > 1 && (
+            <button
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 border border-border bg-background/70 text-foreground hover:text-primary hover:border-primary transition-colors p-3"
+              onClick={(event) => {
+                event.stopPropagation();
+                showNextPhoto();
+              }}
+              aria-label="Foto siguiente"
+            >
+              <ChevronRight className="w-7 h-7" />
+            </button>
+          )}
         </div>
       )}
 
