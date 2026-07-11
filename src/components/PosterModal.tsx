@@ -19,7 +19,7 @@ export default function PosterModal({ person, year, open, onOpenChange }: Poster
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="w-auto max-w-fit max-h-[92vh] overflow-y-auto p-4 sm:p-6">
         <DialogHeader className="text-center">
           <DialogTitle className="font-cinzel text-2xl tracking-wider">
             {person.name}
@@ -30,11 +30,11 @@ export default function PosterModal({ person, year, open, onOpenChange }: Poster
         </DialogHeader>
 
         {/* Poster */}
-        <div className="aspect-[3/4] w-full border border-border bg-card/40">
+        <div className="mx-auto flex max-w-full items-center justify-center border border-border bg-card/40">
           <img
             src={person.posterUrl}
             alt={person.name}
-            className="h-full w-full object-contain"
+            className="block max-h-[72vh] w-auto max-w-full object-contain"
           />
         </div>
 
