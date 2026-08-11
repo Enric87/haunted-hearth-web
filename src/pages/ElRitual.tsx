@@ -32,8 +32,11 @@ export default function ElRitual() {
       <section className="px-6 py-8 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {["/images/ritual/crow.png", "/images/ritual/cthulhu.png", "/images/ritual/pennywise.png"].map((src, i) => (
-            <div key={i} className="bg-card border border-primary/20 overflow-hidden">
-              <div className="aspect-[3/4] flex items-center justify-center">
+            <div
+              key={i}
+              className="card-hover flex flex-col items-center border border-border rounded-sm overflow-hidden bg-card/50 backdrop-blur-sm max-w-xs mx-auto"
+            >
+              <div className="w-full aspect-[2/3] overflow-hidden">
                 <img src={src} alt="" className="w-full h-full object-contain" />
               </div>
             </div>
