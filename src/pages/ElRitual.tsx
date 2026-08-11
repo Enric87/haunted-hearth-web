@@ -7,14 +7,6 @@ import SectionSeparator from "@/components/SectionSeparator";
 
 const ritualVisions = [
   {
-    name: "EL ABISMO",
-    image: "/images/ritual/cthulhu.png",
-    description:
-      "Una fuerza antigua, inmensa y silenciosa. No necesita acercarse demasiado para hacerte sentir pequeno ante algo imposible de comprender.",
-    bio:
-      "No avanza con prisas, porque no lo necesita. Su sola presencia pesa sobre el aire y recuerda que existen horrores demasiado antiguos, demasiado vastos y demasiado oscuros para ser explicados con palabras humanas.",
-  },
-  {
     name: "LA SONRISA",
     image: "/images/ritual/pennywise.png",
     description:
@@ -29,6 +21,14 @@ const ritualVisions = [
       "Un mensajero inmovil entre ramas y niebla. Donde se posa, el aire cambia y el camino parece avisar de que algo esta a punto de comenzar.",
     bio:
       "Observa sin moverse, como si ya conociera el final del recorrido. Entre ruinas, niebla y silencio, su figura anuncia que cada paso hacia delante puede ser tambien una invitacion a mirar atras.",
+  },
+  {
+    name: "EL ABISMO",
+    image: "/images/ritual/cthulhu.png",
+    description:
+      "Una fuerza antigua, inmensa y silenciosa. No necesita acercarse demasiado para hacerte sentir pequeno ante algo imposible de comprender.",
+    bio:
+      "No avanza con prisas, porque no lo necesita. Su sola presencia pesa sobre el aire y recuerda que existen horrores demasiado antiguos, demasiado vastos y demasiado oscuros para ser explicados con palabras humanas.",
   },
 ];
 
