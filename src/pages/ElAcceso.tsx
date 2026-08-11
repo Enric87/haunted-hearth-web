@@ -82,7 +82,7 @@ export default function ElAcceso() {
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-w-[320px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
+          className="inline-flex min-w-[240px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
           CONTACTANOS
