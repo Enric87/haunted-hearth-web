@@ -96,13 +96,13 @@ export default function ElRitual() {
       <section className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8 px-6">
         <Link
           to="/la-familia"
-          className="inline-flex min-w-[240px] items-center justify-center font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
+          className="inline-flex w-[320px] min-h-[68px] items-center justify-center text-center leading-tight font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
         >
           VER LA FAMILIA
         </Link>
         <Link
           to="/galeria"
-          className="inline-flex w-[240px] items-center justify-center text-center leading-tight font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex w-[320px] min-h-[68px] items-center justify-center text-center leading-tight font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           VER LO QUE YA DESPERTAMOS
         </Link>
