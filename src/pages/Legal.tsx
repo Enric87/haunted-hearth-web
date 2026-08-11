@@ -121,7 +121,7 @@ export default function LegalPage({ type }: LegalPageProps) {
       <section className="px-6 pb-8 text-center">
         <Link
           to="/"
-          className="inline-flex font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex min-w-[320px] items-center justify-center font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           VOLVER AL INICIO
         </Link>

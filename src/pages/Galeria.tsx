@@ -189,13 +189,13 @@ export default function Galeria() {
       <section className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8 px-6">
         <Link
           to="/el-ritual"
-          className="inline-block font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
+          className="inline-flex min-w-[320px] items-center justify-center font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
         >
           VER EL RITUAL
         </Link>
         <Link
           to="/el-acceso"
-          className="inline-block font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex min-w-[320px] items-center justify-center font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           VER EL ACCESO
         </Link>

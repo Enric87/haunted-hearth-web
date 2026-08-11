@@ -8,7 +8,7 @@ const googleMapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(a
 
 const tips = [
   "Ven con tiempo. La entrada es gratuita y por turnos.",
-  "Ropa cómoda. El ritual no espera.",
+  "Ropa comoda. El ritual no espera.",
   "Si vienes con menores, decide antes de cruzar el umbral.",
 ];
 
@@ -73,7 +73,7 @@ export default function ElAcceso() {
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex min-w-[320px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           <ExternalLink className="w-4 h-4" />
           ABRIR EN GOOGLE MAPS
@@ -82,10 +82,10 @@ export default function ElAcceso() {
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
+          className="inline-flex min-w-[320px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
-          ESCRÍBENOS
+          CONTACTANOS
         </a>
       </section>
     </Layout>
