@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import AuthorCard from "@/components/AuthorCard";
+import AuthorModal from "@/components/AuthorModal";
 import SectionSeparator from "@/components/SectionSeparator";
 
 const ritualVisions = [
@@ -8,18 +11,24 @@ const ritualVisions = [
     image: "/images/ritual/pennywise.png",
     description:
       "Una presencia burlona que convierte la inocencia en inquietud. Su aparicion parece un juego, pero deja una sensacion que tarda en desaparecer.",
+    bio:
+      "Una figura que desarma la calma con una sonrisa imposible de olvidar. Juega con lo conocido, deforma la inocencia y convierte lo cotidiano en una trampa de nervios, risas tensas y pasos inseguros.",
   },
   {
     name: "EL ABISMO",
     image: "/images/ritual/cthulhu.png",
     description:
       "Una fuerza antigua, inmensa y silenciosa. No necesita acercarse demasiado para hacerte sentir pequeno ante algo imposible de comprender.",
+    bio:
+      "No avanza con prisas, porque no lo necesita. Su sola presencia pesa sobre el aire y recuerda que existen horrores demasiado antiguos, demasiado vastos y demasiado oscuros para ser explicados con palabras humanas.",
   },
   {
     name: "EL PRESAGIO",
     image: "/images/ritual/crow.png",
     description:
       "Un mensajero inmovil entre ramas y niebla. Donde se posa, el aire cambia y el camino parece avisar de que algo esta a punto de comenzar.",
+    bio:
+      "Observa sin moverse, como si ya conociera el final del recorrido. Entre ruinas, niebla y silencio, su figura anuncia que cada paso hacia delante puede ser tambien una invitacion a mirar atras.",
   },
 ];
 
@@ -30,6 +39,8 @@ const rules = [
 ];
 
 export default function ElRitual() {
+  const [selectedVision, setSelectedVision] = useState<(typeof ritualVisions)[number] | null>(null);
+
   return (
     <Layout>
       <section className="px-6 py-12 md:py-20 max-w-3xl mx-auto text-center">
@@ -55,22 +66,11 @@ export default function ElRitual() {
       <section className="px-6 py-8 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ritualVisions.map((vision) => (
-            <div
+            <AuthorCard
               key={vision.name}
-              className="card-hover flex flex-col items-center border border-border rounded-sm overflow-hidden bg-card/50 backdrop-blur-sm max-w-xs mx-auto"
-            >
-              <div className="w-full aspect-[2/3] overflow-hidden">
-                <img src={vision.image} alt={vision.name} className="w-full h-full object-contain" />
-              </div>
-              <div className="p-5 text-center">
-                <h3 className="font-cormorant text-xl font-semibold text-gold tracking-[0.03em] mb-2">
-                  {vision.name}
-                </h3>
-                <p className="font-cormorant text-base text-muted-foreground leading-[1.7]">
-                  {vision.description}
-                </p>
-              </div>
-            </div>
+              {...vision}
+              onClick={() => setSelectedVision(vision)}
+            />
           ))}
         </div>
       </section>
@@ -107,6 +107,14 @@ export default function ElRitual() {
           VER LO QUE YA DESPERTAMOS
         </Link>
       </section>
+
+      <AuthorModal
+        author={selectedVision}
+        open={!!selectedVision}
+        onOpenChange={(open) => {
+          if (!open) setSelectedVision(null);
+        }}
+      />
     </Layout>
   );
 }
