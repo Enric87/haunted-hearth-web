@@ -1,4 +1,4 @@
-import { Clock, ExternalLink, MapPin, MessageCircle } from "lucide-react";
+import { Clock, MapPin, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionSeparator from "@/components/SectionSeparator";
 
@@ -73,10 +73,10 @@ export default function ElAcceso() {
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-w-[320px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex min-w-[240px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
-          <ExternalLink className="w-4 h-4" />
-          ABRIR EN GOOGLE MAPS
+          <MapPin className="w-4 h-4" />
+          GOOGLE MAPS
         </a>
         <a
           href="https://instagram.com"
