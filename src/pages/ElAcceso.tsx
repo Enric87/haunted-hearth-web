@@ -13,10 +13,6 @@ const tips = [
 ];
 
 export default function ElAcceso() {
-  const openGoogleMaps = () => {
-    window.open(googleMapsUrl, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <Layout>
       <section className="px-6 py-12 md:py-20 max-w-3xl mx-auto text-center">
@@ -73,14 +69,13 @@ export default function ElAcceso() {
       <SectionSeparator />
 
       <section className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8 px-6">
-        <button
-          type="button"
-          onClick={openGoogleMaps}
+        <a
+          href={googleMapsUrl}
           className="inline-flex items-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           <ExternalLink className="w-4 h-4" />
           ABRIR EN GOOGLE MAPS
-        </button>
+        </a>
         <a
           href="https://instagram.com"
           target="_blank"
