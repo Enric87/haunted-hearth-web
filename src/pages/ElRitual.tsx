@@ -7,20 +7,20 @@ import SectionSeparator from "@/components/SectionSeparator";
 
 const ritualVisions = [
   {
-    name: "LA SONRISA",
-    image: "/images/ritual/pennywise.png",
-    description:
-      "Una presencia burlona que convierte la inocencia en inquietud. Su aparicion parece un juego, pero deja una sensacion que tarda en desaparecer.",
-    bio:
-      "Una figura que desarma la calma con una sonrisa imposible de olvidar. Juega con lo conocido, deforma la inocencia y convierte lo cotidiano en una trampa de nervios, risas tensas y pasos inseguros.",
-  },
-  {
     name: "EL ABISMO",
     image: "/images/ritual/cthulhu.png",
     description:
       "Una fuerza antigua, inmensa y silenciosa. No necesita acercarse demasiado para hacerte sentir pequeno ante algo imposible de comprender.",
     bio:
       "No avanza con prisas, porque no lo necesita. Su sola presencia pesa sobre el aire y recuerda que existen horrores demasiado antiguos, demasiado vastos y demasiado oscuros para ser explicados con palabras humanas.",
+  },
+  {
+    name: "LA SONRISA",
+    image: "/images/ritual/pennywise.png",
+    description:
+      "Una presencia burlona que convierte la inocencia en inquietud. Su aparicion parece un juego, pero deja una sensacion que tarda en desaparecer.",
+    bio:
+      "Una figura que desarma la calma con una sonrisa imposible de olvidar. Juega con lo conocido, deforma la inocencia y convierte lo cotidiano en una trampa de nervios, risas tensas y pasos inseguros.",
   },
   {
     name: "EL PRESAGIO",
