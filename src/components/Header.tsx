@@ -17,7 +17,18 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
-        <div className="z-50" />
+        <Link
+          to="/"
+          className="z-50 inline-flex items-center"
+          aria-label="Ir al inicio"
+          onClick={() => setOpen(false)}
+        >
+          <img
+            src="/images/logo.png"
+            alt="Terrify Halloween"
+            className="h-10 w-auto object-contain md:h-12"
+          />
+        </Link>
         <button
           onClick={() => setOpen(!open)}
           className="z-50 p-2 text-foreground hover:text-primary transition-colors"
