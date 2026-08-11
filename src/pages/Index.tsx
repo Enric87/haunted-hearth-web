@@ -200,7 +200,7 @@ export default function Index() {
         </p>
         <Link
           to="/la-familia"
-          className="inline-flex min-w-[240px] items-center justify-center font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex w-[320px] min-h-[68px] items-center justify-center text-center leading-tight font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           VER LA FAMILIA
         </Link>

@@ -73,7 +73,7 @@ export default function ElAcceso() {
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-w-[240px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="inline-flex w-[320px] min-h-[68px] items-center justify-center gap-2 text-center leading-tight font-cinzel text-sm tracking-[0.2em] text-primary border border-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           <MapPin className="w-4 h-4" />
           GOOGLE MAPS
@@ -82,7 +82,7 @@ export default function ElAcceso() {
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-w-[240px] items-center justify-center gap-2 font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
+          className="inline-flex w-[320px] min-h-[68px] items-center justify-center gap-2 text-center leading-tight font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
           CONTACTANOS
