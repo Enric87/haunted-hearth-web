@@ -77,7 +77,7 @@ export default function Galeria() {
           <button
             key={d.year}
             onClick={() => handleYearChange(d.year)}
-            className={`font-cinzel text-xs tracking-[0.2em] px-5 py-2 border transition-colors ${
+            className={`inline-flex w-[96px] min-h-[44px] items-center justify-center text-center font-cinzel text-xs tracking-[0.2em] px-4 py-2 border transition-colors ${
               selectedYear === d.year
                 ? "border-primary text-primary"
                 : "border-border text-muted-foreground hover:text-foreground"
@@ -93,7 +93,7 @@ export default function Galeria() {
           <button
             key={f}
             onClick={() => setSelectedFilter(f)}
-            className={`font-cinzel text-xs tracking-[0.2em] px-4 py-2 border transition-colors ${
+            className={`inline-flex w-[96px] min-h-[44px] items-center justify-center text-center font-cinzel text-xs tracking-[0.2em] px-4 py-2 border transition-colors ${
               selectedFilter === f
                 ? "border-primary text-primary"
                 : "border-border text-muted-foreground hover:text-foreground"
