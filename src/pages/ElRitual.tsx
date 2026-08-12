@@ -8,7 +8,7 @@ import SectionSeparator from "@/components/SectionSeparator";
 const ritualVisions = [
   {
     name: "LA SONRISA",
-    image: "/images/ritual/cthulhu.png",
+    image: "/images/ritual/crow.png",
     description:
       "Una presencia burlona que convierte la inocencia en inquietud. Su aparicion parece un juego, pero deja una sensacion que tarda en desaparecer.",
     bio:
@@ -24,7 +24,7 @@ const ritualVisions = [
   },
   {
     name: "EL ABISMO",
-    image: "/images/ritual/crow.png",
+    image: "/images/ritual/cthulhu.png",
     description:
       "Una fuerza antigua, inmensa y silenciosa. No necesita acercarse demasiado para hacerte sentir pequeno ante algo imposible de comprender.",
     bio:
