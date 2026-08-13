@@ -1,4 +1,5 @@
 import type { Person } from "@/data/galeria";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -12,9 +13,20 @@ interface PosterModalProps {
   year: string;
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onPrevious?: () => void;
+  onNext?: () => void;
+  canNavigate?: boolean;
 }
 
-export default function PosterModal({ person, year, open, onOpenChange }: PosterModalProps) {
+export default function PosterModal({
+  person,
+  year,
+  open,
+  onOpenChange,
+  onPrevious,
+  onNext,
+  canNavigate = false,
+}: PosterModalProps) {
   if (!person) return null;
 
   return (
@@ -30,12 +42,32 @@ export default function PosterModal({ person, year, open, onOpenChange }: Poster
         </DialogHeader>
 
         {/* Poster */}
-        <div className="mx-auto flex max-w-full items-center justify-center border border-border bg-card/40">
+        <div className="relative mx-auto flex max-w-full items-center justify-center border border-border bg-card/40">
+          {canNavigate && onPrevious && (
+            <button
+              type="button"
+              className="absolute left-3 top-1/2 z-10 -translate-y-1/2 border border-border bg-background/80 p-2 text-foreground transition-colors hover:border-primary hover:text-primary"
+              onClick={onPrevious}
+              aria-label="Rostro anterior"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+          )}
           <img
             src={person.posterUrl}
             alt={person.name}
             className="block max-h-[72vh] w-auto max-w-full object-contain"
           />
+          {canNavigate && onNext && (
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 z-10 -translate-y-1/2 border border-border bg-background/80 p-2 text-foreground transition-colors hover:border-primary hover:text-primary"
+              onClick={onNext}
+              aria-label="Rostro siguiente"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          )}
         </div>
 
         {/* Su rastro — photos */}

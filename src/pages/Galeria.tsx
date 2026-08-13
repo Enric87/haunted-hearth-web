@@ -27,7 +27,7 @@ export default function Galeria() {
   const [selectedYear, setSelectedYear] = useState("2024");
   const [selectedFilter, setSelectedFilter] = useState<FilterType>("Fotos");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [modalPerson, setModalPerson] = useState<Person | null>(null);
+  const [modalPersonIndex, setModalPersonIndex] = useState<number | null>(null);
 
   const yearData = galeriaData.find((d) => d.year === selectedYear)!;
   const canShowRostros = yearsWithRostros.includes(selectedYear);
@@ -43,10 +43,12 @@ export default function Galeria() {
   const showPhotos = selectedFilter === "Fotos";
   const showVideos = selectedFilter === "Videos";
   const lightbox = lightboxIndex !== null ? yearData.photos[lightboxIndex] ?? null : null;
+  const modalPerson = modalPersonIndex !== null ? yearData.people[modalPersonIndex] ?? null : null;
 
   const showIntro = selectedYear === "2024" && yearData.introText;
 
   const closeLightbox = () => setLightboxIndex(null);
+  const closePosterModal = () => setModalPersonIndex(null);
   const showPreviousPhoto = () => {
     if (lightboxIndex === null || yearData.photos.length === 0) return;
     setLightboxIndex((lightboxIndex - 1 + yearData.photos.length) % yearData.photos.length);
@@ -54,6 +56,14 @@ export default function Galeria() {
   const showNextPhoto = () => {
     if (lightboxIndex === null || yearData.photos.length === 0) return;
     setLightboxIndex((lightboxIndex + 1) % yearData.photos.length);
+  };
+  const showPreviousPerson = () => {
+    if (modalPersonIndex === null || yearData.people.length === 0) return;
+    setModalPersonIndex((modalPersonIndex - 1 + yearData.people.length) % yearData.people.length);
+  };
+  const showNextPerson = () => {
+    if (modalPersonIndex === null || yearData.people.length === 0) return;
+    setModalPersonIndex((modalPersonIndex + 1) % yearData.people.length);
   };
 
   return (
@@ -121,8 +131,8 @@ export default function Galeria() {
               ROSTROS {selectedYear}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {yearData.people.map((person) => (
-                <PosterCard key={person.id} person={person} onClick={() => setModalPerson(person)} />
+              {yearData.people.map((person, index) => (
+                <PosterCard key={person.id} person={person} onClick={() => setModalPersonIndex(index)} />
               ))}
             </div>
           </div>
@@ -249,7 +259,10 @@ export default function Galeria() {
         person={modalPerson}
         year={selectedYear}
         open={!!modalPerson}
-        onOpenChange={(open) => !open && setModalPerson(null)}
+        onOpenChange={(open) => !open && closePosterModal()}
+        onPrevious={showPreviousPerson}
+        onNext={showNextPerson}
+        canNavigate={yearData.people.length > 1}
       />
     </Layout>
   );
