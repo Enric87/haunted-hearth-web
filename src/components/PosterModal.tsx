@@ -31,7 +31,7 @@ export default function PosterModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-auto max-w-fit max-h-[92vh] overflow-y-auto p-4 sm:p-6">
+      <DialogContent className="w-auto max-w-fit max-h-[92vh] overflow-y-auto overflow-x-visible p-4 sm:p-6">
         <DialogHeader className="text-center">
           <DialogTitle className="font-cinzel text-2xl tracking-wider">
             {person.name}
@@ -42,30 +42,32 @@ export default function PosterModal({
         </DialogHeader>
 
         {/* Poster */}
-        <div className="relative mx-auto flex max-w-full items-center justify-center border border-border bg-card/40">
+        <div className="relative mx-auto flex max-w-full items-center justify-center px-12 md:px-16">
           {canNavigate && onPrevious && (
             <button
               type="button"
-              className="absolute left-3 top-1/2 z-10 -translate-y-1/2 border border-border bg-background/80 p-2 text-foreground transition-colors hover:border-primary hover:text-primary"
+              className="absolute left-0 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
               onClick={onPrevious}
               aria-label="Rostro anterior"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-7 w-7" />
             </button>
           )}
-          <img
-            src={person.posterUrl}
-            alt={person.name}
-            className="block max-h-[72vh] w-auto max-w-full object-contain"
-          />
+          <div className="mx-auto flex max-w-full items-center justify-center border border-border bg-card/40">
+            <img
+              src={person.posterUrl}
+              alt={person.name}
+              className="block max-h-[72vh] w-auto max-w-full object-contain"
+            />
+          </div>
           {canNavigate && onNext && (
             <button
               type="button"
-              className="absolute right-3 top-1/2 z-10 -translate-y-1/2 border border-border bg-background/80 p-2 text-foreground transition-colors hover:border-primary hover:text-primary"
+              className="absolute right-0 top-1/2 z-20 translate-x-1/2 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
               onClick={onNext}
               aria-label="Rostro siguiente"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-7 w-7" />
             </button>
           )}
         </div>
