@@ -31,7 +31,7 @@ export default function PosterModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-auto max-w-fit max-h-[92vh] overflow-y-auto overflow-x-visible p-4 sm:p-6">
+      <DialogContent className="w-auto max-w-fit max-h-[92vh] overflow-x-hidden overflow-y-auto p-4 sm:p-6">
         <DialogHeader className="text-center">
           <DialogTitle className="font-cinzel text-2xl tracking-wider">
             {person.name}
