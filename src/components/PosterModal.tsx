@@ -42,11 +42,11 @@ export default function PosterModal({
         </DialogHeader>
 
         {/* Poster */}
-        <div className="relative mx-auto flex max-w-full items-center justify-center px-12 md:px-16">
+        <div className="relative mx-auto flex max-w-full items-center justify-center px-16 md:px-20">
           {canNavigate && onPrevious && (
             <button
               type="button"
-              className="absolute left-0 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
+              className="absolute left-4 top-1/2 z-20 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
               onClick={onPrevious}
               aria-label="Rostro anterior"
             >
@@ -63,7 +63,7 @@ export default function PosterModal({
           {canNavigate && onNext && (
             <button
               type="button"
-              className="absolute right-0 top-1/2 z-20 translate-x-1/2 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
+              className="absolute right-4 top-1/2 z-20 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
               onClick={onNext}
               aria-label="Rostro siguiente"
             >
