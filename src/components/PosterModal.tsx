@@ -31,7 +31,7 @@ export default function PosterModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[calc(100vw-2rem)] max-w-fit max-h-[92vh] overflow-x-hidden overflow-y-auto p-4 sm:w-auto sm:p-6">
+      <DialogContent className="w-[calc(100vw-1rem)] max-w-fit max-h-[96vh] overflow-x-hidden overflow-y-auto p-3 sm:w-auto sm:max-h-[94vh] sm:p-5">
         <DialogHeader className="text-center">
           <DialogTitle className="font-cinzel text-2xl tracking-wider">
             {person.name}
@@ -42,7 +42,7 @@ export default function PosterModal({
         </DialogHeader>
 
         {/* Poster */}
-        <div className="relative mx-auto flex max-w-full flex-col items-center justify-center gap-3 px-2 sm:px-20 md:px-24">
+        <div className="relative mx-auto flex max-w-full flex-col items-center justify-center gap-3 px-1 sm:px-20 md:px-24">
           {canNavigate && onPrevious && (
             <button
               type="button"
@@ -57,7 +57,7 @@ export default function PosterModal({
             <img
               src={person.posterUrl}
               alt={person.name}
-              className="block max-h-[72vh] w-auto max-w-full object-contain"
+              className="block max-h-[78vh] w-auto max-w-full object-contain sm:max-h-[80vh] md:max-h-[82vh]"
             />
           </div>
           {canNavigate && onNext && (
