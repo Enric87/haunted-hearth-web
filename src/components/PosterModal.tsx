@@ -31,7 +31,7 @@ export default function PosterModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-auto max-w-fit max-h-[92vh] overflow-x-hidden overflow-y-auto p-4 sm:p-6">
+      <DialogContent className="w-[calc(100vw-2rem)] max-w-fit max-h-[92vh] overflow-x-hidden overflow-y-auto p-4 sm:w-auto sm:p-6">
         <DialogHeader className="text-center">
           <DialogTitle className="font-cinzel text-2xl tracking-wider">
             {person.name}
@@ -42,11 +42,11 @@ export default function PosterModal({
         </DialogHeader>
 
         {/* Poster */}
-        <div className="relative mx-auto flex max-w-full items-center justify-center px-28 md:px-32">
+        <div className="relative mx-auto flex max-w-full flex-col items-center justify-center gap-3 px-2 sm:px-20 md:px-24">
           {canNavigate && onPrevious && (
             <button
               type="button"
-              className="absolute left-8 top-1/2 z-20 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
+              className="hidden sm:block sm:absolute sm:left-8 sm:top-1/2 z-20 sm:-translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
               onClick={onPrevious}
               aria-label="Rostro anterior"
             >
@@ -63,12 +63,36 @@ export default function PosterModal({
           {canNavigate && onNext && (
             <button
               type="button"
-              className="absolute right-8 top-1/2 z-20 -translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
+              className="hidden sm:block sm:absolute sm:right-8 sm:top-1/2 z-20 sm:-translate-y-1/2 border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
               onClick={onNext}
               aria-label="Rostro siguiente"
             >
               <ChevronRight className="h-7 w-7" />
             </button>
+          )}
+          {canNavigate && (
+            <div className="order-2 flex items-center justify-center gap-3 sm:hidden">
+              {onPrevious && (
+                <button
+                  type="button"
+                  className="border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
+                  onClick={onPrevious}
+                  aria-label="Rostro anterior"
+                >
+                  <ChevronLeft className="h-7 w-7" />
+                </button>
+              )}
+              {onNext && (
+                <button
+                  type="button"
+                  className="border border-border bg-background/90 p-3 text-foreground shadow-lg transition-colors hover:border-primary hover:text-primary"
+                  onClick={onNext}
+                  aria-label="Rostro siguiente"
+                >
+                  <ChevronRight className="h-7 w-7" />
+                </button>
+              )}
+            </div>
           )}
         </div>
 
