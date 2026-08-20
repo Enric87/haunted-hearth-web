@@ -130,7 +130,7 @@ export default function Galeria() {
             <h2 className="font-cinzel text-sm tracking-[0.2em] text-muted-foreground mb-4">
               ROSTROS {selectedYear}
             </h2>
-            <div className="grid grid-cols-1 gap-5 md:max-w-xl md:mx-auto lg:max-w-5xl lg:grid-cols-2 lg:gap-6">
+            <div className="grid grid-cols-1 gap-6 max-w-[340px] mx-auto sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]">
               {yearData.people.map((person, index) => (
                 <PosterCard key={person.id} person={person} onClick={() => setModalPersonIndex(index)} />
               ))}
