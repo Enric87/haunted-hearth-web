@@ -1,4 +1,5 @@
-import { Clock, MapPin, MessageCircle } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 import Layout from "@/components/Layout";
 import SectionSeparator from "@/components/SectionSeparator";
 
@@ -54,16 +55,11 @@ export default function ElAcceso() {
 
       <SectionSeparator />
 
-      <section className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-8 px-6">
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex w-[320px] min-h-[68px] items-center justify-center gap-2 text-center leading-tight font-cinzel text-sm tracking-[0.2em] text-foreground border border-border px-8 py-3 hover:border-primary hover:text-primary transition-colors"
-        >
-          <MessageCircle className="w-4 h-4" />
-          CONTACTANOS
-        </a>
+      <section className="px-6 max-w-2xl mx-auto pb-12">
+        <h2 className="font-cormorant text-xl text-gold tracking-[0.03em] font-medium mb-6 text-center uppercase">
+          CONTACTO
+        </h2>
+        <ContactForm />
       </section>
     </Layout>
   );
