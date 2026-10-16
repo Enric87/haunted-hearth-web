@@ -82,7 +82,7 @@ const pages = {
       {
         heading: "Cómo gestionarlas",
         body: [
-          "Puedes aceptar, bloquear o eliminar cookies desde la configuración de tu navegador. Si bloqueas cookies de terceros, algunas funciones externas como mapas o vídeos podrían no mostrarse correctamente.",
+          "Puedes aceptar, bloquear o eliminar cookies desde la configuración de tu navegador. Si bloqueas cookies de terceros, algunas funciones externas como vídeos podrían no mostrarse correctamente.",
         ],
       },
     ],
