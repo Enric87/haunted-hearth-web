@@ -88,7 +88,7 @@ export default function ContactForm() {
         {err("email")}
       </div>
       <div>
-        <label htmlFor="cf-phone" className={labelClass}>Teléfono</label>
+        <label htmlFor="cf-phone" className={labelClass}>Teléfono (opcional)</label>
         <input id="cf-phone" type="tel" className={fieldClass} maxLength={30}
           value={values.phone} onChange={(e) => set("phone", e.target.value)} />
         {err("phone")}
