@@ -76,7 +76,7 @@ const pages = {
         heading: "Cookies en esta web",
         body: [
           "Esta web no utiliza cookies propias para crear cuentas, iniciar sesión ni vender datos personales.",
-          "Algunos elementos externos, como mapas de Google, vídeos de YouTube o enlaces a redes sociales, pueden utilizar sus propias cookies o tecnologías similares cuando interactúas con ellos.",
+          "Algunos elementos externos, como vídeos de YouTube o enlaces a redes sociales, pueden utilizar sus propias cookies o tecnologías similares cuando interactúas con ellos.",
         ],
       },
       {
