@@ -76,13 +76,13 @@ const pages = {
         heading: "Cookies en esta web",
         body: [
           "Esta web no utiliza cookies propias para crear cuentas, iniciar sesión ni vender datos personales.",
-          "Algunos elementos externos, como mapas de Google, vídeos de YouTube o enlaces a redes sociales, pueden utilizar sus propias cookies o tecnologías similares cuando interactúas con ellos.",
+          "Algunos elementos externos, como vídeos de YouTube o enlaces a redes sociales, pueden utilizar sus propias cookies o tecnologías similares cuando interactúas con ellos.",
         ],
       },
       {
         heading: "Cómo gestionarlas",
         body: [
-          "Puedes aceptar, bloquear o eliminar cookies desde la configuración de tu navegador. Si bloqueas cookies de terceros, algunas funciones externas como mapas o vídeos podrían no mostrarse correctamente.",
+          "Puedes aceptar, bloquear o eliminar cookies desde la configuración de tu navegador. Si bloqueas cookies de terceros, algunas funciones externas como vídeos podrían no mostrarse correctamente.",
         ],
       },
     ],
